@@ -1,32 +1,43 @@
-import { Grid, Box } from "@material-ui/core";
+import { Grid, Box, Typography } from "@material-ui/core";
 import React from "react";
 import { useStyles } from "./DisplayItemStyle";
-import { useQuery } from "react-query";
-import chairFactory from "../../API_CALL/Factory/chairFactory";
+// import { useQuery } from "react-query";
+// import chairFactory from "../../API_CALL/Factory/chairFactory";
 
-export default function DisplayItem({ id }) {
+export default function DisplayItem({ data, id }) {
   const classes = useStyles();
-  console.log("components", id);
-  const { data, isLoading } = useQuery(id, () => chairFactory.get(id));
-  if (isLoading) {
-    return <>loading...</>;
-  }
-
+  // console.log("components", id);
+  // const { data, isLoading } = useQuery(id, () => chairFactory.get(id));
+  // if (isLoading) {
+  //   return <>loading...</>;
+  // }
+  console.log("id", id);
+  console.log("data", data);
+  const itemData = data.filter((data) => data.id === id);
+  console.log("item data", itemData);
   return (
     <>
-      {data.map((data) => (
+      {itemData.map((data) => (
         <>
           <Grid className={classes.productDetails}>
             <div>
               <Grid className={classes.cardContent}>
                 <img
-                  src="/assets/chair-section/chair-image-1.jpeg"
-                  alt={data.chair_name}
+                  src={data.image}
+                  alt={data.name}
                   className={classes.imgStyle}
                 />
               </Grid>
             </div>
           </Grid>
+          <Box paddingTop="20px">
+            <Typography variant="h4" style={{ paddingBottom: "10px" }}>
+              Enquiry or Order on
+            </Typography>
+            <Typography variant="h3">
+              Vipulbhai : 9825381956, 7016911293
+            </Typography>
+          </Box>
           <Grid container className={classes.chairInfoTable} spacing={2}>
             <Grid
               item
@@ -37,7 +48,7 @@ export default function DisplayItem({ id }) {
               <div>Name: </div>
             </Grid>
             <Grid item xs={6}>
-              <div>{data.chair_name}</div>
+              <div>{data.name || ""}</div>
             </Grid>
             <Grid
               item
@@ -48,7 +59,7 @@ export default function DisplayItem({ id }) {
               <div>Type: </div>
             </Grid>
             <Grid item xs={6}>
-              <div>{data.chair_type}</div>
+              <div>{data.type || ""}</div>
             </Grid>
             <Grid
               item
@@ -59,7 +70,7 @@ export default function DisplayItem({ id }) {
               <div>Arm: </div>
             </Grid>
             <Grid item xs={6}>
-              <div>{data.chair_arm}</div>
+              <div>{data.arm || ""}</div>
             </Grid>
             <Grid
               item
@@ -70,7 +81,7 @@ export default function DisplayItem({ id }) {
               <div>Arm material: </div>
             </Grid>
             <Grid item xs={6}>
-              <div>{data.chair_arm_material}</div>
+              <div>{data.arm_material || ""}</div>
             </Grid>
             <Grid
               item
@@ -81,7 +92,7 @@ export default function DisplayItem({ id }) {
               <div>Back color : </div>
             </Grid>
             <Grid item xs={6}>
-              <div>{data.chair_back_color}</div>
+              <div>{data.back_color || ""}</div>
             </Grid>
             <Grid
               item
@@ -92,7 +103,7 @@ export default function DisplayItem({ id }) {
               <div>Back material: </div>
             </Grid>
             <Grid item xs={6}>
-              <div>{data.chair_back_material}</div>
+              <div>{data.back_material || ""}</div>
             </Grid>
             <Grid
               item
@@ -103,7 +114,7 @@ export default function DisplayItem({ id }) {
               <div>Headrest: </div>
             </Grid>
             <Grid item xs={6}>
-              <div>{data.chair_headrest}</div>
+              <div>{data.headrest || ""}</div>
             </Grid>
             <Grid
               item
@@ -114,7 +125,7 @@ export default function DisplayItem({ id }) {
               <div>Height adjustable: </div>
             </Grid>
             <Grid item xs={6}>
-              <div>{data.chair_height_adjustable}</div>
+              <div>{data.height_adjustable || ""}</div>
             </Grid>
             <Grid
               item
@@ -125,7 +136,7 @@ export default function DisplayItem({ id }) {
               <div>Pushback: </div>
             </Grid>
             <Grid item xs={6}>
-              <div>{data.chair_pushback}</div>
+              <div>{data.pushback || ""}</div>
             </Grid>
             <Grid
               item
@@ -136,7 +147,7 @@ export default function DisplayItem({ id }) {
               <div>Seat color: </div>
             </Grid>
             <Grid item xs={6}>
-              <div>{data.chair_seat_color}</div>
+              <div>{data.seat_color || ""}</div>
             </Grid>
             <Grid
               item
@@ -147,7 +158,7 @@ export default function DisplayItem({ id }) {
               <div>Seat material: </div>
             </Grid>
             <Grid item xs={6}>
-              <div>{data.chair_seat_material}</div>
+              <div>{data.seat_material || ""}</div>
             </Grid>
             <Grid
               item
@@ -158,7 +169,7 @@ export default function DisplayItem({ id }) {
               <div>Stand: </div>
             </Grid>
             <Grid item xs={6}>
-              <div>{data.chair_stand}</div>
+              <div>{data.stand || ""}</div>
             </Grid>
             <Grid
               item
@@ -169,7 +180,7 @@ export default function DisplayItem({ id }) {
               <div>Wheel: </div>
             </Grid>
             <Grid item xs={6}>
-              <div>{data.chair_wheel}</div>
+              <div>{data.wheel || ""}</div>
             </Grid>
           </Grid>
         </>

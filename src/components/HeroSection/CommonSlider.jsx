@@ -72,7 +72,6 @@ export default function CommonSlider({ sliderContent, slideToShow, action }) {
       },
     ],
   };
-
   return (
     <Slider {...settings}>
       {sliderContent.sliderImage.map((data, index) => (
@@ -80,8 +79,8 @@ export default function CommonSlider({ sliderContent, slideToShow, action }) {
           <Link to={action ? action : ""}>
             <Grid className={classes.cardContent}>
               <img
-                src={data.chair_image}
-                alt={data.chair_name}
+                src={data.image}
+                alt={data.name}
                 className={classes.imgStyle}
               />
             </Grid>

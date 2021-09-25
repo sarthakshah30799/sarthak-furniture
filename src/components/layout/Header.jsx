@@ -186,7 +186,7 @@ export default function Header() {
           {header.links.map((link, index) => (
             <Link
               key={`mobile-header-menu-id-${index}`}
-              href={link.link}
+              href={link.link.toLowerCase()}
               className={classes.mobileHeaderLink}
               onClick={() => setOpenDrawer(false)}
             >

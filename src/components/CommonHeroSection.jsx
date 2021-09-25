@@ -26,7 +26,7 @@ export default function CommonHeroSection({ sliderContent, slideToShow }) {
           >
             <Link
               style={{ textDecoration: "none" }}
-              to={`/${sliderContent.title}`}
+              to={`/${sliderContent.title.toLowerCase()}`}
             >
               <Button className={classes.viewAllButon}>
                 View All <ArrowForwardIcon style={{ paddingLeft: "7px" }} />

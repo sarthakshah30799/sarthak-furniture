@@ -39,7 +39,7 @@ export default function SubHeader() {
           <Box display="flex" flexDirection="row">
             {header.links.map((link, index) => (
               <Link
-                to={`/${link.title}`}
+                to={`/${link.title.toLowerCase()}`}
                 key={`page-header-${index}`}
                 style={{ textDecoration: "none" }}
               >

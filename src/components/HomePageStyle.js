@@ -36,7 +36,6 @@ export const useStyles = makeStyles((theme) =>
     prodInfo: {
       paddingTop: "20px",
       paddingBottom: "10px",
-      paddingInline: "30px",
       display: "flex",
       flexDirection: "column",
       textAlign: "center",

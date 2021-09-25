@@ -3,26 +3,47 @@ import { useParams } from "react-router-dom";
 import Index from "..";
 import { CategoryProducts } from "../../components/CategoryProductsLayout/CategoryProducts";
 import HomePage from "../../components/HomePage";
+import {
+  chairPartsData,
+  sofaSetsData,
+  carpetsData,
+  chairsData,
+  tablesData,
+  curtainsData,
+} from "../../productData";
 
-const data = [
-  "./assets/chair-section/chair-image-1.jpeg",
-  "./assets/chair-section/chair-image-1.jpeg",
-  "./assets/chair-section/chair-image-1.jpeg",
-  "./assets/chair-section/chair-image-1.jpeg",
-  "./assets/chair-section/chair-image-1.jpeg",
-  "./assets/chair-section/chair-image-1.jpeg",
-  "./assets/chair-section/chair-image-1.jpeg",
-  "./assets/chair-section/chair-image-1.jpeg",
-  "./assets/chair-section/chair-image-1.jpeg",
-  "./assets/chair-section/chair-image-1.jpeg",
-];
 export default function Category() {
   const { category } = useParams();
   return (
     <>
-      {category === "Chairs" && (
+      {category === "chairs" && (
         <CategoryProducts>
-          <HomePage category={data} />
+          <HomePage type={category} category={chairsData} />
+        </CategoryProducts>
+      )}
+      {category === "tables" && (
+        <CategoryProducts>
+          <HomePage type={category} category={tablesData} />
+        </CategoryProducts>
+      )}
+      {category === "curtains" && (
+        <CategoryProducts>
+          <HomePage type={category} category={curtainsData} />
+        </CategoryProducts>
+      )}
+      {category === "carpets" && (
+        <CategoryProducts>
+          <HomePage type={category} category={carpetsData} />
+        </CategoryProducts>
+      )}
+      {category === "sofa-sets" && (
+        <CategoryProducts>
+          <HomePage type={category} category={sofaSetsData} />
+        </CategoryProducts>
+      )}
+      {category === "chair-parts" && (
+        <CategoryProducts>
+          <HomePage type={category} category={chairPartsData} />
         </CategoryProducts>
       )}
     </>

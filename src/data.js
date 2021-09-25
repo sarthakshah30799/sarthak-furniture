@@ -77,7 +77,7 @@ export const ChairSection = {
     },
     {
       title: "chair-image-5",
-      image: "/assets/chair-section/chair-image-6.jpeg",
+      image: "/assets/chair-section/chair-image-5.jpeg",
     },
   ],
 };

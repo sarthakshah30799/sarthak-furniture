@@ -33,6 +33,7 @@ export const useStyles = makeStyles((theme) =>
       margin: "auto",
       height: "350px",
       borderRadius: "15px",
+      width: "100%",
       transition: "transform .2s",
       "&:hover": {
         transform: "scale(1.1)",

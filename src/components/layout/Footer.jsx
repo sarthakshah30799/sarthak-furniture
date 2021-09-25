@@ -3,7 +3,8 @@ import { createStyles } from "@material-ui/styles";
 import React from "react";
 import CallIcon from "@material-ui/icons/Call";
 import MailIcon from "@material-ui/icons/Mail";
-import InstagramIcon from "@material-ui/icons/Instagram";
+// import InstagramIcon from "@material-ui/icons/Instagram";
+import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import { footer, header } from "../../data";
 
 const useStyles = makeStyles(() =>
@@ -81,9 +82,22 @@ export default function Footer() {
               display="flex"
               justifyContent="space-between"
             >
-              <CallIcon />
-              <MailIcon />
-              <InstagramIcon />
+              <a href="tel:98253819560" style={{ color: "black" }}>
+                <CallIcon />
+              </a>
+              <a
+                href="mailto:sarthakshah30799@gmail.com"
+                style={{ color: "black" }}
+              >
+                <MailIcon />
+              </a>
+              <a
+                href="https://wa.me/message/VILIS62SKTM7H1"
+                style={{ color: "black" }}
+                target="_blank"
+              >
+                <WhatsAppIcon />
+              </a>
             </Box>
           </Grid>
         </Grid>

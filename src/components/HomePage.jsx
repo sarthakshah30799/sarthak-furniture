@@ -1,25 +1,25 @@
 import { Grid, Typography, Button } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+import React, { /* useEffect, */ useState } from "react";
 import { Link } from "react-router-dom";
 import { useStyles } from "./HomePageStyle.js";
-import { useQuery } from "react-query";
-import chairFactory from "../API_CALL/Factory/chairFactory.js";
+// import { useQuery } from "react-query";
+// import chairFactory from "../API_CALL/Factory/chairFactory.js";
 import Pagination from "material-ui-flat-pagination";
 
-export default function HomePage({ category }) {
+export default function HomePage({ category, type }) {
   const classes = useStyles();
   const [offset, setOffset] = useState(0);
   const perPage = 10;
-  const { data, isLoading } = useQuery("chairs", () => chairFactory.getAll());
-  useEffect(() => {});
-  if (isLoading) {
-    return <>loading...</>;
-  }
-  console.log("off set", offset);
+  // const { data, isLoading } = useQuery("chairs", () => chairFactory.getAll());
+  // useEffect(() => {});
+  // if (isLoading) {
+  //   return <>loading...</>;
+  // }
+
   return (
     <>
       <Grid container className={classes.root} spacing={2}>
-        {data.slice(offset, offset + perPage).map((data, index) => (
+        {category.slice(offset, offset + perPage).map((data, index) => (
           <Grid
             item
             lg={3}
@@ -28,23 +28,19 @@ export default function HomePage({ category }) {
             key={`chairs-image-${index}`}
             style={{ paddingBottom: "50px", position: "relative" }}
           >
-            <img
-              src={data.chair_image}
-              alt={data.chair_name}
-              className={classes.img}
-            />
+            <img src={data.image} alt={data.name} className={classes.img} />
             <Grid className={classes.prodInfo}>
               <Typography variant="h5" className={classes.title}>
                 Name:
-                <span style={{ fontWeight: "400" }}>{data.chair_name}</span>
+                <span style={{ fontWeight: "400" }}>{data.name}</span>
               </Typography>
               <Typography variant="h5" className={classes.title}>
                 Type:
-                <span style={{ fontWeight: "400" }}>{data.chair_type}</span>
+                <span style={{ fontWeight: "400" }}>{data.type}</span>
               </Typography>
             </Grid>
             <Link
-              to={`/Chairs/${data.chair_id}`}
+              to={`/${type.toLowerCase()}/${data.id}`}
               className={classes.viewAllLink}
             >
               <Button className={classes.viewAllButton}>
@@ -57,7 +53,7 @@ export default function HomePage({ category }) {
       <Pagination
         limit={perPage}
         offset={offset}
-        total={data.length}
+        total={category.length}
         onClick={(e, off) => setOffset(off)}
         size="large"
         centerRipple={true}
