@@ -42,8 +42,10 @@ export const useStyles = makeStyles((theme) =>
       "@media (max-width:1100px)": {
         height: "300px",
       },
-      "@media (max-width:600px)": {
+      "@media (max-width:900px)": {
         width: "auto",
+      },
+      "@media (max-width:600px)": {
         maxWidth: "350px",
         maxHeight: "250px",
         borderRadius: "20px",
