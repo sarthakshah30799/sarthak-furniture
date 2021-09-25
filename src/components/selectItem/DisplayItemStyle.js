@@ -6,27 +6,12 @@ export const useStyles = makeStyles((theme) =>
       paddingTop: "50px",
       maxWidth: "900px",
       margin: "auto",
-    },
-    imgStyle: {
-      boxShadow: `0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)`,
-      margin: "auto",
-      height: "350px",
-      borderRadius: "15px",
-      transition: "transform .2s",
-      "&:hover": {
-        transform: "scale(1.1)",
+      "@media (max-width:600px)": {
+        maxWidth: "400px",
       },
-      cursor: "pointer",
-    },
-    sliderContainer: {
-      padding: "40px 0",
-    },
-    singleSlider: {
-      background: "lightgrey",
-      border: "2px solid white",
-      borderRadius: "50%",
-      boxShadow: "",
-      margin: "0 10px",
+      "@media (max-width:400px)": {
+        maxWidth: "350px",
+      },
     },
     cardContent: {
       margin: "auto",
@@ -34,6 +19,46 @@ export const useStyles = makeStyles((theme) =>
       borderRadius: "20px",
       background: "lightgrey",
       maxWidth: "600px",
+      "@media (max-width:600px)": {
+        maxWidth: "400px",
+        padding: "50px 40px",
+      },
+      "@media (max-width:400px)": {
+        maxWidth: "350px",
+        padding: "30px 20px",
+      },
+    },
+    imgStyle: {
+      boxShadow: `0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)`,
+      margin: "auto",
+      height: "500px",
+      borderRadius: "15px",
+      transition: "transform .2s",
+      "&:hover": {
+        transform: "scale(1.2)",
+      },
+      cursor: "pointer",
+      "@media (max-width:1100px)": {
+        height: "500px",
+      },
+      "@media (max-width:600px)": {
+        maxWidth: "450px",
+        maxHeight: "350px",
+        borderRadius: "20px",
+      },
+    },
+    chairInfoTable: {
+      maxWidth: "600px",
+      margin: "auto",
+      marginTop: "30px",
+      padding: "20px 10px",
+      border: "1px solid grey",
+    },
+    chairInfoRow: {
+      bottomBorder: "1px solid black",
+    },
+    chairInfoKey: {
+      fontWeight: "600",
     },
   })
 );

@@ -4,7 +4,7 @@ export const useStyles = makeStyles((theme) =>
   createStyles({
     appBar: {
       color: theme.palette.common.black,
-      background: 'url("./assets/header/background-image.jpg")',
+      background: 'url("/assets/header/background-image.jpg")',
       borderRadius: "50px",
       position: "relative",
       boxShadow: "0px 10px 10px rgb(0,0,0,0.7)",
@@ -70,6 +70,7 @@ export const useStyles = makeStyles((theme) =>
       fontSize: "20px",
       fontWeight: "500",
       transition: "transform .2s",
+      textDecoration: "none",
       "&:hover": {
         transform: "scale(1.5)",
         textDecoration: "none",

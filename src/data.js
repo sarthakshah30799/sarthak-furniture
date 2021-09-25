@@ -61,23 +61,23 @@ export const ChairSection = {
   sliderImage: [
     {
       title: "chair-image-1",
-      image: "./assets/chair-section/chair-image-1.jpeg",
+      image: "/assets/chair-section/chair-image-1.jpeg",
     },
     {
       title: "chair-image-2",
-      image: "./assets/chair-section/chair-image-2.jpeg",
+      image: "/assets/chair-section/chair-image-2.jpeg",
     },
     {
       title: "chair-image-3",
-      image: "./assets/chair-section/chair-image-3.jpeg",
+      image: "/assets/chair-section/chair-image-3.jpeg",
     },
     {
       title: "chair-image-4",
-      image: "./assets/chair-section/chair-image-4.jpeg",
+      image: "/assets/chair-section/chair-image-4.jpeg",
     },
     {
       title: "chair-image-5",
-      image: "./assets/chair-section/chair-image-6.jpeg",
+      image: "/assets/chair-section/chair-image-6.jpeg",
     },
   ],
 };
@@ -87,19 +87,19 @@ export const TableSection = {
   sliderImage: [
     {
       title: "table-image-1",
-      image: "./assets/table-section/table-image-1.jpeg",
+      image: "/assets/table-section/table-image-1.jpeg",
     },
     {
       title: "table-image-2",
-      image: "./assets/table-section/table-image-2.jpeg",
+      image: "/assets/table-section/table-image-2.jpeg",
     },
     {
       title: "table-image-3",
-      image: "./assets/table-section/table-image-3.jpeg",
+      image: "/assets/table-section/table-image-3.jpeg",
     },
     {
       title: "table-image-4",
-      image: "./assets/table-section/table-image-4.jpeg",
+      image: "/assets/table-section/table-image-4.jpeg",
     },
   ],
 };
@@ -109,19 +109,19 @@ export const CarpetSection = {
   sliderImage: [
     {
       title: "carpet-image-1",
-      image: "./assets/carpet-section/carpet-image-1.jpeg",
+      image: "/assets/carpet-section/carpet-image-1.jpeg",
     },
     {
       title: "carpet-image-2",
-      image: "./assets/carpet-section/carpet-image-2.jpeg",
+      image: "/assets/carpet-section/carpet-image-2.jpeg",
     },
     {
       title: "carpet-image-3",
-      image: "./assets/carpet-section/carpet-image-3.jpeg",
+      image: "/assets/carpet-section/carpet-image-3.jpeg",
     },
     {
       title: "carpet-image-4",
-      image: "./assets/carpet-section/carpet-image-4.jpeg",
+      image: "/assets/carpet-section/carpet-image-4.jpeg",
     },
   ],
 };
@@ -131,19 +131,19 @@ export const SofaSetSection = {
   sliderImage: [
     {
       title: "sofa-set-image-1",
-      image: "./assets/sofa-set-section/sofa-set-image-1.jpeg",
+      image: "/assets/sofa-set-section/sofa-set-image-1.jpeg",
     },
     {
       title: "sofa-set-image-2",
-      image: "./assets/sofa-set-section/sofa-set-image-2.jpeg",
+      image: "/assets/sofa-set-section/sofa-set-image-2.jpeg",
     },
     {
       title: "sofa-set-image-3",
-      image: "./assets/sofa-set-section/sofa-set-image-3.jpeg",
+      image: "/assets/sofa-set-section/sofa-set-image-3.jpeg",
     },
     {
       title: "sofa-set-image-4",
-      image: "./assets/sofa-set-section/sofa-set-image-4.jpeg",
+      image: "/assets/sofa-set-section/sofa-set-image-4.jpeg",
     },
   ],
 };
@@ -153,19 +153,19 @@ export const CurtainSection = {
   sliderImage: [
     {
       title: "curtain-image-1",
-      image: "./assets/curtain-section/curtain-image-1.jpeg",
+      image: "/assets/curtain-section/curtain-image-1.jpeg",
     },
     {
       title: "curtain-image-2",
-      image: "./assets/curtain-section/curtain-image-2.jpeg",
+      image: "/assets/curtain-section/curtain-image-2.jpeg",
     },
     {
       title: "curtain-image-3",
-      image: "./assets/curtain-section/curtain-image-3.jpeg",
+      image: "/assets/curtain-section/curtain-image-3.jpeg",
     },
     {
       title: "curtain-image-4",
-      image: "./assets/curtain-section/curtain-image-4.jpeg",
+      image: "/assets/curtain-section/curtain-image-4.jpeg",
     },
   ],
 };
@@ -175,19 +175,19 @@ export const ChairPartSection = {
   sliderImage: [
     {
       title: "chair-part-image-1",
-      image: "./assets/chair-parts-section/chair-part-image-1.jpeg",
+      image: "/assets/chair-parts-section/chair-part-image-1.jpeg",
     },
     {
       title: "chair-part-image-2",
-      image: "./assets/chair-parts-section/chair-part-image-2.jpeg",
+      image: "/assets/chair-parts-section/chair-part-image-2.jpeg",
     },
     {
       title: "chair-part-image-3",
-      image: "./assets/chair-parts-section/chair-part-image-3.jpeg",
+      image: "/assets/chair-parts-section/chair-part-image-3.jpeg",
     },
     {
       title: "chair-part-image-4",
-      image: "./assets/chair-parts-section/chair-part-image-4.jpeg",
+      image: "/assets/chair-parts-section/chair-part-image-4.jpeg",
     },
   ],
 };

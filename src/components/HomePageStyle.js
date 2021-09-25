@@ -55,9 +55,19 @@ export const useStyles = makeStyles((theme) =>
     },
     viewAllLink: {
       position: "absolute",
-      bottom: "50px",
+      bottom: "20px",
       left: "0",
       right: "0",
+    },
+    paginationRoot: {
+      margin: "auto",
+      maxWidth: "700px",
+      backgroundColor: "gray",
+    },
+    paginationLabel: {
+      color: "black",
+      fontWeight: "600",
+      textTransform: "capitalize",
     },
   })
 );
