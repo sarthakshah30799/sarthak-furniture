@@ -63,7 +63,7 @@ export default function SubHeader() {
           {header.links.map((link, index) => (
             <Link
               key={`mobile-header-menu-id-${index}`}
-              to={`/${link.title}`}
+              to={`/${link.title.toLowerCase()}`}
               className={classes.mobileHeaderLink}
               onClick={() => setOpenDrawer(false)}
             >

@@ -43,6 +43,7 @@ export const useStyles = makeStyles((theme) =>
         height: "300px",
       },
       "@media (max-width:600px)": {
+        width: "auto",
         maxWidth: "350px",
         maxHeight: "250px",
         borderRadius: "20px",
