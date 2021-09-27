@@ -25,7 +25,7 @@ export const useStyles = makeStyles((theme) =>
         padding: "30px 10px",
       },
       "@media (max-width:375px)": {
-        padding: "10px 0",
+        padding: "10px",
       },
     },
     imgStyle: {
@@ -33,8 +33,8 @@ export const useStyles = makeStyles((theme) =>
       margin: "auto",
       height: "350px",
       borderRadius: "15px",
-      width: "100%",
       transition: "transform .2s",
+      width: "auto",
       "&:hover": {
         transform: "scale(1.1)",
       },
@@ -42,10 +42,8 @@ export const useStyles = makeStyles((theme) =>
       "@media (max-width:1100px)": {
         height: "300px",
       },
-      "@media (max-width:900px)": {
-        width: "auto",
-      },
       "@media (max-width:600px)": {
+        width: "100%",
         maxWidth: "350px",
         maxHeight: "250px",
         borderRadius: "20px",
