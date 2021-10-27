@@ -23,7 +23,7 @@ export const useStyles = makeStyles((theme) =>
         maxWidth: "400px",
         padding: "50px 40px",
       },
-      "@media (max-width:400px)": {
+      "@media (max-width:500px)": {
         maxWidth: "350px",
         padding: "30px 20px",
       },
@@ -33,7 +33,7 @@ export const useStyles = makeStyles((theme) =>
       margin: "auto",
       height: "500px",
       borderRadius: "15px",
-      maxWidth: "400px",
+      maxWidth: "500px",
       width: "100%",
       transition: "transform .2s",
       "&:hover": {
@@ -55,6 +55,10 @@ export const useStyles = makeStyles((theme) =>
       marginTop: "30px",
       padding: "20px 10px",
       border: "1px solid grey",
+      "@media (max-width:600px)": {
+        maxWidth: "350px",
+        padding: "20px 0px",
+      },
     },
     chairInfoRow: {
       bottomBorder: "1px solid black",

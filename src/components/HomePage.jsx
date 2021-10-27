@@ -15,7 +15,7 @@ export default function HomePage({ category, type }) {
   // if (isLoading) {
   //   return <>loading...</>;
   // }
-
+  // console.log("data", data[3]);
   return (
     <>
       <Grid container className={classes.root} spacing={2}>
@@ -26,9 +26,21 @@ export default function HomePage({ category, type }) {
             sm={4}
             xs={6}
             key={`chairs-image-${index}`}
-            style={{ paddingBottom: "50px", position: "relative" }}
+            style={{
+              paddingBottom: "50px",
+              position: "relative",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+            }}
           >
-            <img src={data.image} alt={data.name} className={classes.img} />
+            <div>
+              <img
+                src={data.image ? data.image : "/assets/no-image.png"}
+                alt={data.name}
+                className={classes.img}
+              />
+            </div>
             <Grid className={classes.prodInfo}>
               <Typography variant="h5" className={classes.title}>
                 Name:

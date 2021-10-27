@@ -8,7 +8,6 @@ import {
   List,
   ListItem,
   makeStyles,
-  Paper,
   Typography,
 } from "@material-ui/core";
 import { header } from "../../data";

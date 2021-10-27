@@ -6,6 +6,7 @@ import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { useStyles } from "./CommonSliderStyle";
 import { Container, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import { noImage } from "../../data";
 
 function SampleNextArrow(props) {
   const { style, onClick } = props;
@@ -67,6 +68,12 @@ export default function CommonSlider({ sliderContent, slideToShow, action }) {
       {
         breakpoint: 900,
         settings: {
+          slidesToShow: slideToShow !== 1 ? 2 : 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
           slidesToShow: 1,
         },
       },
@@ -75,11 +82,11 @@ export default function CommonSlider({ sliderContent, slideToShow, action }) {
   return (
     <Slider {...settings}>
       {sliderContent.sliderImage.map((data, index) => (
-        <Container key={`${data.chair_name}-${index}`}>
-          <Link to={action ? action : ""}>
+        <Container key={`slider-${data.name}-${index}`}>
+          <Link to={`/${sliderContent.title.toLowerCase()}/${data.id}`}>
             <Grid className={classes.cardContent}>
               <img
-                src={data.image}
+                src={!!data.image ? data.image : noImage}
                 alt={data.name}
                 className={classes.imgStyle}
               />

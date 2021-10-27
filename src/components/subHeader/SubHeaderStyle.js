@@ -24,6 +24,15 @@ export const useStyles = makeStyles((theme) =>
         alignItems: "center",
       },
     },
+    headerLink: {
+      textDecoration: "none",
+      transition: "transform .2s",
+      display: "inline-block",
+      "&:hover": {
+        transform: "scale(1.2)",
+        textDecoration: "none",
+      },
+    },
     linkStyle: {
       padding: "0 15px",
       color: "black",

@@ -9,6 +9,7 @@ import {
   chairsData,
   tablesData,
   curtainsData,
+  doubleBedData,
 } from "../../productData";
 
 export default function Product() {
@@ -44,6 +45,11 @@ export default function Product() {
       {category === "chair-parts" && (
         <CategoryProducts>
           <DisplayItem id={id} data={chairPartsData} />
+        </CategoryProducts>
+      )}
+      {category === "double-beds" && (
+        <CategoryProducts>
+          <DisplayItem id={id} data={doubleBedData} />
         </CategoryProducts>
       )}
     </>

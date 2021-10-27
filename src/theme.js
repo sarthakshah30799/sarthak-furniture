@@ -22,11 +22,24 @@ export const theme = createTheme({
     h3: {
       fontSize: "30px",
       fontWeight: "600",
+      "@media (max-width:900px)": {
+        fontSize: "22px",
+      },
+      "@media (max-width:400px)": {
+        fontSize: "18px",
+      },
     },
     h4: {
       fontSize: "25px",
       fontWeight: "700",
+      "@media (max-width:900px)": {
+        fontSize: "18px",
+      },
+      "@media (max-width:400px)": {
+        fontSize: "15px",
+      },
     },
+
     h5: {
       fontSize: "20px",
       fontWeight: "normal",

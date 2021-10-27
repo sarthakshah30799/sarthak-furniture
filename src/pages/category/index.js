@@ -1,6 +1,5 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Index from "..";
 import { CategoryProducts } from "../../components/CategoryProductsLayout/CategoryProducts";
 import HomePage from "../../components/HomePage";
 import {
@@ -10,6 +9,7 @@ import {
   chairsData,
   tablesData,
   curtainsData,
+  doubleBedData,
 } from "../../productData";
 
 export default function Category() {
@@ -44,6 +44,11 @@ export default function Category() {
       {category === "chair-parts" && (
         <CategoryProducts>
           <HomePage type={category} category={chairPartsData} />
+        </CategoryProducts>
+      )}
+      {category === "double-beds" && (
+        <CategoryProducts>
+          <HomePage type={category} category={doubleBedData} />
         </CategoryProducts>
       )}
     </>

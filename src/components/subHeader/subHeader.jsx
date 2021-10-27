@@ -7,6 +7,7 @@ import {
   Drawer,
   List,
   ListItem,
+  Link as MaterialLink,
 } from "@material-ui/core";
 import { useStyles } from "./SubHeaderStyle";
 import { header } from "../../data";
@@ -37,17 +38,29 @@ export default function SubHeader() {
         </Grid>
         <Grid item className={classes.headerLinkContent}>
           <Box display="flex" flexDirection="row">
-            {header.links.map((link, index) => (
-              <Link
-                to={`/${link.title.toLowerCase()}`}
-                key={`page-header-${index}`}
-                style={{ textDecoration: "none" }}
-              >
-                <Typography className={classes.linkStyle} variant="h6">
-                  {link.title}
-                </Typography>
-              </Link>
-            ))}
+            {header.links.map((link, index) =>
+              link.title === "About" ? (
+                <MaterialLink
+                  key={`header-menu-id-${index}`}
+                  href={link.link}
+                  className={classes.headerLink}
+                >
+                  <Typography className={classes.linkStyle} variant="h6">
+                    {link.title}
+                  </Typography>
+                </MaterialLink>
+              ) : (
+                <Link
+                  to={`/${link.title.toLowerCase()}`}
+                  key={`page-header-${index}`}
+                  className={classes.headerLink}
+                >
+                  <Typography className={classes.linkStyle} variant="h6">
+                    {link.title}
+                  </Typography>
+                </Link>
+              )
+            )}
           </Box>
         </Grid>
       </Grid>

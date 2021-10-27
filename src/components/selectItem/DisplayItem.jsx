@@ -11,14 +11,12 @@ export default function DisplayItem({ data, id }) {
   // if (isLoading) {
   //   return <>loading...</>;
   // }
-  console.log("id", id);
-  console.log("data", data);
+
   const itemData = data.filter((data) => data.id === id);
-  console.log("item data", itemData);
   return (
     <>
-      {itemData.map((data) => (
-        <>
+      {itemData.map((data, index) => (
+        <Box key={`single-item-${index}`}>
           <Grid className={classes.productDetails}>
             <div>
               <Grid className={classes.cardContent}>
@@ -183,7 +181,7 @@ export default function DisplayItem({ data, id }) {
               <div>{data.wheel || ""}</div>
             </Grid>
           </Grid>
-        </>
+        </Box>
       ))}
     </>
   );

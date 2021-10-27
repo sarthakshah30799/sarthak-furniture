@@ -6,6 +6,7 @@ import {
   ChairPartSection,
   ChairSection,
   CurtainSection,
+  DoubleBedSection,
   SofaSetSection,
   TableSection,
 } from "../data";
@@ -17,6 +18,10 @@ const sectionData = [
   },
   {
     name: TableSection,
+    slide: 1,
+  },
+  {
+    name: DoubleBedSection,
     slide: 1,
   },
   {
