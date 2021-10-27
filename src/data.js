@@ -121,14 +121,14 @@ export const CarpetSection = {
   title: "Carpets",
   sliderImage: [
     {
-      id: "SFCARPET02",
+      id: "SFCARPET01",
       title: "carpet-image-1",
-      image: "/assets/carpet-section/carpet-image-2.jpg",
+      image: "/assets/carpet-section/carpet-image-1.jpg",
     },
     {
-      id: "SFCARPET01",
+      id: "SFCARPET02",
       title: "carpet-image-2",
-      image: "/assets/carpet-section/carpet-image-1.jpeg",
+      image: "/assets/carpet-section/carpet-image-2.jpeg",
     },
     {
       id: "SFCARPET03",

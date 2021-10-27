@@ -3,13 +3,13 @@ export const carpetsData = [
     id: "SFCARPET01",
     name: "Red carpet",
     type: "carpet",
-    image: "/assets/carpet-section/carpet-image-2.jpg",
+    image: "/assets/carpet-section/carpet-image-1.jpg",
   },
   {
     id: "SFCARPET02",
     name: "Blue dotted carpet",
     type: "carpet",
-    image: "/assets/carpet-section/carpet-image-1.jpeg",
+    image: "/assets/carpet-section/carpet-image-2.jpeg",
   },
   {
     id: "SFCARPET03",
