@@ -73,16 +73,27 @@ export default function SubHeader() {
         }}
       >
         <List>
-          {header.links.map((link, index) => (
-            <Link
-              key={`mobile-header-menu-id-${index}`}
-              to={`/${link.title.toLowerCase()}`}
-              className={classes.mobileHeaderLink}
-              onClick={() => setOpenDrawer(false)}
-            >
-              <ListItem>{link.title}</ListItem>
-            </Link>
-          ))}
+          {header.links.map((link, index) =>
+            link.title === "About" ? (
+              <MaterialLink
+                key={`header-menu-id-${index}`}
+                href={link.link}
+                className={classes.mobileHeaderLink}
+                onClick={() => setOpenDrawer(false)}
+              >
+                <ListItem>{link.title}</ListItem>
+              </MaterialLink>
+            ) : (
+              <Link
+                key={`mobile-header-menu-id-${index}`}
+                to={`/${link.title.toLowerCase()}`}
+                className={classes.mobileHeaderLink}
+                onClick={() => setOpenDrawer(false)}
+              >
+                <ListItem>{link.title}</ListItem>
+              </Link>
+            )
+          )}
         </List>
       </Drawer>
     </AppBar>
