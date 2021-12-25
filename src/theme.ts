@@ -4,14 +4,14 @@ export const theme = createTheme({
   typography: {
     h1: {
       fontSize: "55px",
-      fontWeight: "700",
+      fontWeight: 700,
       "@media (max-width:1100px)": {
         fontSize: "40px",
       },
     },
     h2: {
       fontSize: "40px",
-      fontWeight: "500",
+      fontWeight: 500,
       "@media (max-width:600px)": {
         fontSize: "25px",
       },
@@ -21,7 +21,7 @@ export const theme = createTheme({
     },
     h3: {
       fontSize: "30px",
-      fontWeight: "600",
+      fontWeight: 600,
       "@media (max-width:900px)": {
         fontSize: "22px",
       },
@@ -31,7 +31,7 @@ export const theme = createTheme({
     },
     h4: {
       fontSize: "25px",
-      fontWeight: "700",
+      fontWeight: 700,
       "@media (max-width:900px)": {
         fontSize: "18px",
       },
@@ -55,7 +55,7 @@ export const theme = createTheme({
     },
     h6: {
       fontSize: "15px",
-      fontWeight: "600",
+      fontWeight: 600,
     },
   },
 });

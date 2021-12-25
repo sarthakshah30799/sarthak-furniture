@@ -35,7 +35,7 @@ const useStyles = makeStyles(() =>
     },
     gstNo: {
       position: "absolute",
-      fontWeight: "600",
+      fontWeight: 600,
       top: "0",
       right: "10px",
       "@media (max-width:900px)": {
@@ -49,7 +49,7 @@ const useStyles = makeStyles(() =>
     },
     title: {
       fontSize: "6rem",
-      fontWeight: "700",
+      fontWeight: 700,
       padding: "30px 0",
       "@media (max-width:1100px)": {
         fontSize: "4rem",
@@ -70,7 +70,7 @@ const useStyles = makeStyles(() =>
       color: "black",
       padding: "10px 30px",
       fontSize: "20px",
-      fontWeight: "500",
+      fontWeight: 500,
       transition: "transform .2s",
       display: "inline-block",
       "&:hover": {
@@ -117,7 +117,7 @@ const useStyles = makeStyles(() =>
       padding: "10px",
       color: "black",
       fontSize: "20px",
-      fontWeight: "500",
+      fontWeight: 500,
       transition: "transform .2s",
       "&:hover": {
         transform: "scale(1.5)",

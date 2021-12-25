@@ -1,21 +1,18 @@
 import { Grid, Typography, Button } from "@material-ui/core";
-import React, { /* useEffect, */ useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useStyles } from "./HomePageStyle.js";
-// import { useQuery } from "react-query";
-// import chairFactory from "../API_CALL/Factory/chairFactory.js";
+import { useStyles } from "./HomePageStyle";
 import Pagination from "material-ui-flat-pagination";
+import { useQuery } from "@apollo/client";
+import { GET_ALL_CHAIRS } from "../API_CALL/getAllChairs";
 
 export default function HomePage({ category, type }) {
   const classes = useStyles();
   const [offset, setOffset] = useState(0);
   const perPage = 10;
-  // const { data, isLoading } = useQuery("chairs", () => chairFactory.getAll());
-  // useEffect(() => {});
-  // if (isLoading) {
-  //   return <>loading...</>;
-  // }
-  // console.log("data", data[3]);
+  const { data, loading } = useQuery(GET_ALL_CHAIRS);
+  console.log("Data", data);
+
   return (
     <>
       <Grid container className={classes.root} spacing={2}>

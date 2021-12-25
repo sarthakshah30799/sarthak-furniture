@@ -53,7 +53,7 @@ export const useStyles = makeStyles((theme) =>
       borderRadius: "25px",
       padding: "10px 20px",
       marginTop: "15px",
-      fontWeight: "600",
+      fontWeight: 600,
       "@media (max-width:600px)": {
         marginTop: "30px",
         padding: "8px 15px",

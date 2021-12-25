@@ -49,7 +49,7 @@ export const useStyles = makeStyles((theme) =>
       borderRadius: "20px",
       background: "#D3D3D3",
       fontSize: "12px",
-      fontWeight: "700",
+      fontWeight: 700,
       paddingInline: "20px",
     },
     viewAllLink: {
@@ -65,7 +65,7 @@ export const useStyles = makeStyles((theme) =>
     },
     paginationLabel: {
       color: "black",
-      fontWeight: "600",
+      fontWeight: 600,
       textTransform: "capitalize",
     },
   })

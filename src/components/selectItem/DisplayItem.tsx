@@ -12,7 +12,7 @@ export default function DisplayItem({ data, id }) {
   //   return <>loading...</>;
   // }
 
-  const itemData = data.filter((data) => data.id === id);
+  const itemData = data.filter((data: any) => data.id === id);
   return (
     <>
       {itemData.map((data, index) => (
