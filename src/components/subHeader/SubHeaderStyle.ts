@@ -77,7 +77,7 @@ export const useStyles = makeStyles((theme) =>
       padding: "10px",
       color: "black",
       fontSize: "20px",
-      fontWeight: "500",
+      fontWeight: 500,
       transition: "transform .2s",
       textDecoration: "none",
       "&:hover": {

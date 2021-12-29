@@ -3,14 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.5.6",
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "@types/material-ui": "^0.21.12",
     "aws-sdk": "^2.959.0",
     "axios": "^0.21.1",
     "cors": "^2.8.5",
+    "formik": "^2.2.9",
+    "graphql": "^16.2.0",
     "material-ui-flat-pagination": "^4.1.2",
     "mysql2": "^2.2.5",
     "react": "^17.0.2",
@@ -40,5 +44,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.2"
   }
 }

@@ -64,7 +64,7 @@ export const useStyles = makeStyles((theme) =>
       bottomBorder: "1px solid black",
     },
     chairInfoKey: {
-      fontWeight: "600",
+      fontWeight: 600,
     },
   })
 );
