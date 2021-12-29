@@ -8,6 +8,8 @@ export const theme = createTheme({
       "@media (max-width:1100px)": {
         fontSize: "40px",
       },
+      fontFamily: "Raleway",
+      letterSpacing: "2px",
     },
     h2: {
       fontSize: "40px",

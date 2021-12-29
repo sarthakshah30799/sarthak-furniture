@@ -50,7 +50,6 @@ export const useStyles = makeStyles((theme) =>
       textTransform: "capitalize",
       background: "linear-gradient(180deg, #404040 0%, #7f8c8d 74%)",
       color: "#ffffff",
-      borderRadius: "25px",
       padding: "10px 20px",
       marginTop: "15px",
       fontWeight: 600,
@@ -60,8 +59,10 @@ export const useStyles = makeStyles((theme) =>
       },
     },
     positionCenter: {
+      paddingRight: "40px",
       "@media (max-width:600px)": {
         justifyContent: "center",
+        paddingRight: "0",
       },
     },
   })
