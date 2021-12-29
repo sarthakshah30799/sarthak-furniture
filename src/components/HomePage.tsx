@@ -3,15 +3,15 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useStyles } from "./HomePageStyle";
 import Pagination from "material-ui-flat-pagination";
-import { useQuery } from "@apollo/client";
-import { GET_ALL_CHAIRS } from "../API_CALL/getAllChairs";
+// import { useQuery } from "@apollo/client";
+// import { GET_ALL_CHAIRS } from "../API_CALL/getAllChairs";
 
 export default function HomePage({ category, type }) {
   const classes = useStyles();
   const [offset, setOffset] = useState(0);
   const perPage = 10;
-  const { data, loading } = useQuery(GET_ALL_CHAIRS);
-  console.log("Data", data);
+  // const { data, loading } = useQuery(GET_ALL_CHAIRS);
+  // console.log("Data", data);
 
   return (
     <>
