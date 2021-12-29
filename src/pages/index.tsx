@@ -1,5 +1,6 @@
 import React from "react";
 import CommonHeroSection from "../components/CommonHeroSection";
+import { HeroSection } from "../components/HeroSection";
 import Layout from "../components/layout/Layout";
 import {
   CarpetSection,
@@ -44,6 +45,7 @@ const sectionData = [
 export default function Index() {
   return (
     <Layout>
+      <HeroSection />
       {sectionData.map((data, index) => (
         <CommonHeroSection
           key={`section-id-${index}`}

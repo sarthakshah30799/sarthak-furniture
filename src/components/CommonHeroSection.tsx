@@ -8,9 +8,16 @@ import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 export default function CommonHeroSection({ sliderContent, slideToShow }) {
   const classes = useStyles();
   return (
-    <Container className={classes.root} id={sliderContent.title.toLowerCase()}>
+    <Container
+      maxWidth="xl"
+      className={classes.root}
+      id={sliderContent.title.toLowerCase()}
+    >
       <Grid>
-        <Typography variant="h1" style={{ color: "black" }}>
+        <Typography
+          variant="h1"
+          style={{ color: "black", paddingBottom: "20px" }}
+        >
           {sliderContent.title}
         </Typography>
         <div className={classes.sliderContainer}>

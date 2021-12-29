@@ -24,13 +24,13 @@ const useStyles = makeStyles(() =>
       backgroundRepeat: "no-repeat",
       backgroundSize: "100% 100%",
       color: "black",
-      marginBottom: "100px",
+      marginBottom: "80px",
       "@media (max-width:900px)": {
         padding: "20px",
         marginBottom: "50px",
       },
       "@media (max-width:600px)": {
-        marginBottom: "30px",
+        marginBottom: "50px",
       },
     },
     gstNo: {
