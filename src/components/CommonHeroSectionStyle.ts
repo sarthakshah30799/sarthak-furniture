@@ -3,23 +3,12 @@ import { createStyles, makeStyles } from "@material-ui/core";
 export const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
-      padding: "50px 0",
-      "@media (max-width:600px)": {
-        padding: "30px 0",
-      },
+      padding: "20px 0",
     },
     sliderContainer: {
       margin: "auto",
-      padding: "40px 0",
-      "@media (max-width:1100px)": {
-        maxWidth: "950px",
-      },
-      "@media (max-width:900px)": {
-        maxWidth: "700px",
-      },
-      "@media (max-width:600px)": {
-        maxWidth: "400px",
-      },
+      padding: "20px 10px",
+      background: "honeydew",
     },
     singleSlider: {
       background: "lightgrey",

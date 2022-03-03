@@ -15,31 +15,31 @@ import {
 const sectionData = [
   {
     name: ChairSection,
-    slide: 3,
+    slide: 4,
   },
   {
     name: TableSection,
-    slide: 1,
+    slide: 3,
   },
   {
     name: DoubleBedSection,
-    slide: 1,
+    slide: 3,
   },
   {
     name: SofaSetSection,
-    slide: 1,
+    slide: 3,
   },
   {
     name: CarpetSection,
-    slide: 1,
+    slide: 3,
   },
   {
     name: CurtainSection,
-    slide: 1,
+    slide: 3,
   },
   {
     name: ChairPartSection,
-    slide: 1,
+    slide: 3,
   },
 ];
 export default function Index() {

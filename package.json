@@ -3,18 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@apollo/client": "^3.5.6",
+    "@apollo/client": "^3.5.9",
+    "@apollo/react-components": "^4.0.0",
+    "@apollo/react-hoc": "^4.0.0",
+    "@apollo/react-hooks": "^4.0.0",
+    "@graphql-codegen/cli": "^2.6.2",
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "@types/graphql": "^14.5.0",
     "@types/material-ui": "^0.21.12",
+    "@types/node": "^17.0.21",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/react-slick": "^0.23.8",
+    "apollo": "^2.33.9",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.10",
+    "awesome-typescript-loader": "^5.2.1",
     "aws-sdk": "^2.959.0",
     "axios": "^0.21.1",
     "cors": "^2.8.5",
     "formik": "^2.2.9",
-    "graphql": "^16.2.0",
+    "graphql": "^16.3.0",
+    "graphql-tag": "^2.12.6",
     "material-ui-flat-pagination": "^4.1.2",
     "mysql2": "^2.2.5",
     "react": "^17.0.2",
@@ -25,13 +38,15 @@
     "react-scripts": "4.0.3",
     "react-slick": "^0.28.1",
     "slick-carousel": "^1.8.1",
+    "source-map-loader": "^3.0.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "browserslist": {
     "production": [
@@ -46,9 +61,20 @@
     ]
   },
   "devDependencies": {
-    "@types/react": "^17.0.37",
+    "@graphql-codegen/cli": "2.6.2",
+    "@graphql-codegen/typescript": "2.4.5",
+    "@graphql-codegen/typescript-operations": "2.3.2",
+    "@graphql-codegen/typescript-react-apollo": "3.2.8",
+    "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/parser": "^5.12.1",
     "ts-loader": "^9.2.6",
-    "typescript": "^4.5.2"
+    "typescript": "^4.6.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   }
 }

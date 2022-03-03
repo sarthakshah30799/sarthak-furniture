@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { useStyles } from "./CommonSliderStyle";
-import { Container, Grid } from "@material-ui/core";
+import { Box, Container, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { noImage } from "../../data";
 
@@ -56,7 +56,7 @@ export default function CommonSlider({ sliderContent, slideToShow, action }) {
   const classes = useStyles();
   const settings = {
     arrows: true,
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: slideToShow,
@@ -68,13 +68,13 @@ export default function CommonSlider({ sliderContent, slideToShow, action }) {
       {
         breakpoint: 900,
         settings: {
-          slidesToShow: slideToShow !== 1 ? 2 : 1,
+          slidesToShow: 2,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
         },
       },
     ],
@@ -82,7 +82,7 @@ export default function CommonSlider({ sliderContent, slideToShow, action }) {
   return (
     <Slider {...settings}>
       {sliderContent.sliderImage.map((data, index) => (
-        <Container key={`slider-${data.name}-${index}`}>
+        <Box key={`slider-${data.name}-${index}`}>
           <Link to={`/${sliderContent.title.toLowerCase()}/${data.id}`}>
             <Grid className={classes.cardContent}>
               <img
@@ -92,7 +92,7 @@ export default function CommonSlider({ sliderContent, slideToShow, action }) {
               />
             </Grid>
           </Link>
-        </Container>
+        </Box>
       ))}
     </Slider>
   );

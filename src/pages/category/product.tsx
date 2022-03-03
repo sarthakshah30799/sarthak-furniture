@@ -13,7 +13,7 @@ import {
 } from "../../productData";
 
 export default function Product() {
-  const { category, id } = useParams();
+  const { category, id }: { category: string; id: string } = useParams();
   console.log("slug", id, category);
   return (
     <>
