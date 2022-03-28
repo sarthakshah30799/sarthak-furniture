@@ -13,7 +13,7 @@ import {
 } from "../../productData";
 
 export default function Category() {
-  const { category } = useParams();
+  const { category }: { category: string } = useParams();
   return (
     <>
       {category === "chairs" && (

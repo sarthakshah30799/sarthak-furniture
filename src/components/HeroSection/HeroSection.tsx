@@ -1,9 +1,9 @@
-import React from "react";
+import * as React from "react";
 import { heroSectionData } from "../../productData";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Box, Container, createStyles, makeStyles } from "@material-ui/core";
+import { Box, createStyles, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -32,6 +32,7 @@ const HeroSection = () => {
     autoplay: true,
   };
   const classes = useStyles();
+
   return (
     <Box style={{ paddingBottom: "50px" }}>
       <Slider {...settings}>

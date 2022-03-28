@@ -14,40 +14,35 @@ export const useStyles = makeStyles((theme) =>
     },
     cardContent: {
       margin: "auto",
-      padding: "50px 40px",
-      borderRadius: "20px",
-      background: "lightgrey",
+      padding: "20px",
+      width: "100%",
       maxWidth: "600px",
+      height: "350px",
       "@media (max-width:1100px)": {
         padding: "30px 20px",
       },
       "@media (max-width:600px)": {
-        padding: "30px 20px",
+        padding: "0",
       },
       "@media (max-width:375px)": {
-        padding: "10px",
+        padding: "0px",
+        maxWidth: "160px",
+        height: "250px",
       },
     },
     imgStyle: {
-      boxShadow: `0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)`,
       margin: "auto",
-      height: "350px",
-      borderRadius: "15px",
+      height: "100%",
       transition: "transform .2s",
-      maxWidth: "500px",
       width: "100%",
+      objectFit: "contain",
+      cursor: "pointer",
       "&:hover": {
         transform: "scale(1.1)",
       },
-      cursor: "pointer",
-      "@media (max-width:1100px)": {
-        height: "300px",
-      },
-      "@media (max-width:600px)": {
-        maxWidth: "350px",
-        maxHeight: "250px",
-        borderRadius: "20px",
-      },
+      // "@media (max-width:600px)": {
+      //   padding: "0 10px",
+      // },
     },
     viewAllButon: {
       textTransform: "capitalize",
