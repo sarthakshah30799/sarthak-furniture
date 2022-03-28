@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { useStyles } from "./CommonSliderStyle";
-import { Box, Container, Grid } from "@material-ui/core";
+import { Box, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { noImage } from "../../data";
 

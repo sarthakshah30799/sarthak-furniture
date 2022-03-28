@@ -1,9 +1,8 @@
+import React from "react";
 import { Box, Grid, makeStyles, Typography } from "@material-ui/core";
 import { createStyles } from "@material-ui/styles";
-import React from "react";
 import CallIcon from "@material-ui/icons/Call";
 import MailIcon from "@material-ui/icons/Mail";
-// import InstagramIcon from "@material-ui/icons/Instagram";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import { footer, header } from "../../data";
 
@@ -95,6 +94,7 @@ export default function Footer() {
                 href="https://wa.me/message/VILIS62SKTM7H1"
                 style={{ color: "black" }}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <WhatsAppIcon />
               </a>

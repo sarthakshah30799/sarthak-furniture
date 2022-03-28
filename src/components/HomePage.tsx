@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useStyles } from "./HomePageStyle";
 import Pagination from "material-ui-flat-pagination";
-import { useQuery } from "@apollo/client";
 
 export default function HomePage({ category, type }) {
   const classes = useStyles();
