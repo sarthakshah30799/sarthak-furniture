@@ -31,6 +31,7 @@ const useStyles = makeStyles(() =>
       },
       "@media (max-width:600px)": {
         marginBottom: "50px",
+        padding: "20px 10px",
       },
     },
     gstNo: {
@@ -47,6 +48,21 @@ const useStyles = makeStyles(() =>
         justifyContent: "center",
       },
     },
+    logo: {
+      maxHeight: "200px",
+      padding: "0 20px",
+      "@media (max-width:1100px)": {
+        maxHeight: "150px",
+      },
+      "@media (max-width:900px)": {
+        padding: "0 10px",
+        maxHeight: "100px",
+      },
+      "@media (max-width:600px)": {
+        padding: "0 5px",
+        maxHeight: "50px",
+      },
+    },
     title: {
       fontSize: "6rem",
       fontWeight: 700,
@@ -57,7 +73,7 @@ const useStyles = makeStyles(() =>
       },
       "@media (max-width:900px)": {
         padding: "0",
-        fontSize: "3rem",
+        fontSize: "2.5rem",
       },
       "@media (max-width:600px)": {
         fontSize: "1.5rem",
@@ -146,9 +162,16 @@ export default function Header() {
             alignItems="center"
             className={classes.header}
           >
-            <Typography variant="h1" className={classes.title}>
-              {header.name}
-            </Typography>
+            <Box display={"flex"} alignItems="center">
+              <img
+                className={classes.logo}
+                src={header.logo}
+                alt="sarthak-furniture"
+              />
+              <Typography variant="h1" className={classes.title}>
+                {header.name}
+              </Typography>
+            </Box>
             <div
               className={classes.hamburger}
               onClick={() => setOpenDrawer(!openDrawer)}

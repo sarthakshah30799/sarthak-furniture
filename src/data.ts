@@ -1,6 +1,7 @@
 export const header = {
   name: "SARTHAK FURNITURE",
   gstNo: "24AKVPS0306G2Z3",
+  logo: "/assets/sf_logo.png",
   links: [
     {
       title: "Chairs",

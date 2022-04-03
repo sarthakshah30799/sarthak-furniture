@@ -13,7 +13,7 @@ export const useStyles = makeStyles((theme) =>
       margin: "10px auto",
       padding: "15px 30px",
       "@media (max-width:1100px)": {
-        padding: "10px 20px",
+        padding: "10px 15px",
       },
     },
     headerContent: {
@@ -23,6 +23,10 @@ export const useStyles = makeStyles((theme) =>
         width: "100%",
         alignItems: "center",
       },
+    },
+    logo: {
+      maxHeight: "50px",
+      padding: "0 0px",
     },
     headerLink: {
       textDecoration: "none",
