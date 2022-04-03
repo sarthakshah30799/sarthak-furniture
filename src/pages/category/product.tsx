@@ -14,7 +14,6 @@ import {
 
 export default function Product() {
   const { category, id }: { category: string; id: string } = useParams();
-  console.log("slug", id, category);
   return (
     <>
       {category === "chairs" && (

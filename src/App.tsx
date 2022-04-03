@@ -9,6 +9,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import { theme } from "./theme";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { API_URL } from "./API_CALL/API_URL";
+import Chair from "./pages/admin/chair";
 
 function App() {
   const client = new ApolloClient({
@@ -23,6 +24,9 @@ function App() {
         <ThemeProvider theme={theme}>
           <div className="App">
             <BrowserRouter>
+              <Route path="/admin/chair">
+                <Chair />
+              </Route>
               <Switch>
                 <Route path={`/:category/:id`}>
                   <Product />
