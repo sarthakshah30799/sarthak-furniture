@@ -7,8 +7,14 @@ export const useStyles = makeStyles((theme) =>
     },
     sliderContainer: {
       margin: "auto",
-      padding: "20px 10px",
+      padding: "50px 10px",
       background: "honeydew",
+      "@media (max-width:1100px)": {
+        padding: "30px 10px",
+      },
+      "@media (max-width:600px)": {
+        padding: "20px 10px",
+      },
     },
     singleSlider: {
       background: "lightgrey",
@@ -40,7 +46,7 @@ export const useStyles = makeStyles((theme) =>
       background: "linear-gradient(180deg, #404040 0%, #7f8c8d 74%)",
       color: "#ffffff",
       padding: "10px 20px",
-      marginTop: "15px",
+      marginTop: "30px",
       fontWeight: 600,
       "@media (max-width:600px)": {
         marginTop: "30px",

@@ -12,22 +12,33 @@ export const useStyles = makeStyles((theme) =>
       boxShadow: "",
       margin: "0 10px",
     },
+    sliderNavigationButton: {
+      background: "linear-gradient(315deg, #000000 0%, #7f8c8d 74%)",
+      borderRadius: "50%",
+      padding: "22px",
+      position: "absolute",
+      cursor: "pointer",
+      top: "50%",
+      zIndex: 100,
+      transform: "translate(0,-50%)",
+      "@media (max-width:600px)": {
+        padding: "10px",
+      },
+    },
     cardContent: {
       margin: "auto",
-      padding: "20px",
       width: "100%",
-      maxWidth: "600px",
+      maxWidth: "400px",
       height: "350px",
       "@media (max-width:1100px)": {
-        padding: "30px 20px",
+        maxWidth: "300px",
       },
       "@media (max-width:600px)": {
         padding: "0",
-      },
-      "@media (max-width:375px)": {
-        padding: "0px",
         maxWidth: "160px",
-        height: "250px",
+      },
+      "@media (max-width:450px)": {
+        height: "150px",
       },
     },
     imgStyle: {
@@ -40,9 +51,6 @@ export const useStyles = makeStyles((theme) =>
       "&:hover": {
         transform: "scale(1.1)",
       },
-      // "@media (max-width:600px)": {
-      //   padding: "0 10px",
-      // },
     },
     viewAllButon: {
       textTransform: "capitalize",

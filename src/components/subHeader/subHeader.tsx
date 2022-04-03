@@ -22,9 +22,12 @@ export default function SubHeader() {
     <AppBar className={classes.appBar}>
       <Grid container justify="space-between" alignItems="center">
         <Grid item className={classes.headerContent}>
-          <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-            <Typography variant="h2">{header.name}</Typography>
-          </Link>
+          <Box display={"flex"} alignItems="center">
+            <img className={classes.logo} src={header.logo} alt={header.name} />
+            <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+              <Typography variant="h2">{header.name}</Typography>
+            </Link>
+          </Box>
           <div
             className={classes.hamburger}
             onClick={() => setOpenDrawer(!openDrawer)}
