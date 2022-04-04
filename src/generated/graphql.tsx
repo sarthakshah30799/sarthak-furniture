@@ -691,23 +691,36 @@ export type UpdateMigrationPayloadMigrationEdgeArgs = {
   orderBy?: InputMaybe<Array<MigrationsOrderBy>>;
 };
 
+export type ChairDetailsFragment = { __typename?: 'Chair', id: any, name?: string | null, type?: string | null };
+
 export type GetAllChairsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetAllChairsQuery = { __typename?: 'Query', allChairs?: { __typename?: 'ChairsConnection', nodes: Array<{ __typename?: 'Chair', id: any, name?: string | null, type?: string | null } | null> } | null };
 
+export type CreateChairMutationVariables = Exact<{
+  input: CreateChairInput;
+}>;
 
+
+export type CreateChairMutation = { __typename?: 'Mutation', createChair?: { __typename?: 'CreateChairPayload', chair?: { __typename?: 'Chair', id: any, name?: string | null, type?: string | null } | null } | null };
+
+export const ChairDetailsFragmentDoc = gql`
+    fragment chairDetails on Chair {
+  id
+  name
+  type
+}
+    `;
 export const GetAllChairsDocument = gql`
     query getAllChairs {
   allChairs {
     nodes {
-      id
-      name
-      type
+      ...chairDetails
     }
   }
 }
-    `;
+    ${ChairDetailsFragmentDoc}`;
 
 /**
  * __useGetAllChairsQuery__
@@ -735,3 +748,38 @@ export function useGetAllChairsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptio
 export type GetAllChairsQueryHookResult = ReturnType<typeof useGetAllChairsQuery>;
 export type GetAllChairsLazyQueryHookResult = ReturnType<typeof useGetAllChairsLazyQuery>;
 export type GetAllChairsQueryResult = Apollo.QueryResult<GetAllChairsQuery, GetAllChairsQueryVariables>;
+export const CreateChairDocument = gql`
+    mutation createChair($input: CreateChairInput!) {
+  createChair(input: $input) {
+    chair {
+      ...chairDetails
+    }
+  }
+}
+    ${ChairDetailsFragmentDoc}`;
+export type CreateChairMutationFn = Apollo.MutationFunction<CreateChairMutation, CreateChairMutationVariables>;
+
+/**
+ * __useCreateChairMutation__
+ *
+ * To run a mutation, you first call `useCreateChairMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreateChairMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createChairMutation, { data, loading, error }] = useCreateChairMutation({
+ *   variables: {
+ *      input: // value for 'input'
+ *   },
+ * });
+ */
+export function useCreateChairMutation(baseOptions?: Apollo.MutationHookOptions<CreateChairMutation, CreateChairMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<CreateChairMutation, CreateChairMutationVariables>(CreateChairDocument, options);
+      }
+export type CreateChairMutationHookResult = ReturnType<typeof useCreateChairMutation>;
+export type CreateChairMutationResult = Apollo.MutationResult<CreateChairMutation>;
+export type CreateChairMutationOptions = Apollo.BaseMutationOptions<CreateChairMutation, CreateChairMutationVariables>;

@@ -1,0 +1,21 @@
+fragment chairDetails on Chair {
+  id
+  name
+  type
+}
+
+query getAllChairs {
+  allChairs {
+    nodes {
+      ...chairDetails
+    }
+  }
+}
+
+mutation createChair($input: CreateChairInput!) {
+  createChair(input: $input) {
+    chair {
+      ...chairDetails
+    }
+  }
+}
