@@ -2,6 +2,7 @@ import React from "react";
 import { ChairCreateView } from "./chair-create-view";
 import { FormLayout } from "../../../form";
 import { useChairCreate } from "../hooks/use-chair-create";
+import { FormikProps } from "formik";
 
 export const ChairCreateApollo = () => {
   const { chairCreationSchema } = useChairCreate();
@@ -14,7 +15,7 @@ export const ChairCreateApollo = () => {
       onSubmit={() => {}}
       initialValues={initialValues}
     >
-      {({ ...props }) => <ChairCreateView {...props} />}
+      {({ ...props }: FormikProps<any>) => <ChairCreateView {...props} />}
     </FormLayout>
   );
 };

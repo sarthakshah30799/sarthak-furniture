@@ -706,7 +706,7 @@ export type CreateChairMutationVariables = Exact<{
 export type CreateChairMutation = { __typename?: 'Mutation', createChair?: { __typename?: 'CreateChairPayload', chair?: { __typename?: 'Chair', id: any, name?: string | null, type?: string | null } | null } | null };
 
 export const ChairDetailsFragmentDoc = gql`
-    fragment chairDetails on Chair {
+    fragment ChairDetails on Chair {
   id
   name
   type
@@ -716,7 +716,7 @@ export const GetAllChairsDocument = gql`
     query getAllChairs {
   allChairs {
     nodes {
-      ...chairDetails
+      ...ChairDetails
     }
   }
 }
@@ -752,7 +752,7 @@ export const CreateChairDocument = gql`
     mutation createChair($input: CreateChairInput!) {
   createChair(input: $input) {
     chair {
-      ...chairDetails
+      ...ChairDetails
     }
   }
 }

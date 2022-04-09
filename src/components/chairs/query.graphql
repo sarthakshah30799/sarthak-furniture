@@ -1,4 +1,4 @@
-fragment chairDetails on Chair {
+fragment ChairDetails on Chair {
   id
   name
   type
@@ -7,7 +7,7 @@ fragment chairDetails on Chair {
 query getAllChairs {
   allChairs {
     nodes {
-      ...chairDetails
+      ...ChairDetails
     }
   }
 }
@@ -15,7 +15,7 @@ query getAllChairs {
 mutation createChair($input: CreateChairInput!) {
   createChair(input: $input) {
     chair {
-      ...chairDetails
+      ...ChairDetails
     }
   }
 }
