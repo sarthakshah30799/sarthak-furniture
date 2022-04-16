@@ -1,9 +1,0 @@
-query getAllChairs {
-  allChairs {
-    nodes {
-      id
-      name
-      type
-    }
-  }
-}

@@ -1,0 +1,39 @@
+fragment ChairDetails on Chair {
+  id
+  name
+  type
+  arm
+  armmaterial
+  backcolor
+  backmaterial
+  seatcolor
+  seatmaterial
+  headrest
+  heightadjustable
+  price
+  pushback
+  stand
+  wheel
+}
+
+fragment ChairLite on Chair {
+  id
+  name
+  type
+}
+
+query getAllChairs {
+  allChairs {
+    nodes {
+      ...ChairDetails
+    }
+  }
+}
+
+mutation createChair($input: CreateChairInput!) {
+  createChair(input: $input) {
+    chair {
+      ...ChairDetails
+    }
+  }
+}
