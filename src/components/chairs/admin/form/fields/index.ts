@@ -1,4 +1,3 @@
-export * from "./chair-id";
 export * from "./chair-name";
 export * from "./chair-arm";
 export * from "./chair-arm-material";

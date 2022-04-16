@@ -5,14 +5,14 @@ import { useChairCreate } from "../hooks/use-chair-create";
 import { FormikProps } from "formik";
 
 export const ChairCreateApollo = () => {
-  const { chairCreationSchema } = useChairCreate();
-  const initialValues = {
-    name: "",
-  };
+  const { chairCreationSchema, initialValues, createChair } = useChairCreate();
+
   return (
     <FormLayout
       validationSchema={chairCreationSchema}
-      onSubmit={() => {}}
+      onSubmit={(values) => {
+        createChair(values);
+      }}
       initialValues={initialValues}
     >
       {({ ...props }: FormikProps<any>) => <ChairCreateView {...props} />}

@@ -3,5 +3,7 @@ import React from "react";
 import { FormFieldLayout } from "../../../../form";
 
 export const ChairPriceField: React.FC<FormikProps<any>> = ({ ...props }) => {
-  return <FormFieldLayout name={"price"} label={"Price"} {...props} />;
+  return (
+    <FormFieldLayout name={"price"} type="number" label={"Price"} {...props} />
+  );
 };

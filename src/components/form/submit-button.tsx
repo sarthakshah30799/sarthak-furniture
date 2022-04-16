@@ -1,7 +1,7 @@
 import { Button } from "@material-ui/core";
 import React from "react";
 
-export const SubmitButton = () => {
+export const SubmitButton = ({ isLoading }) => {
   return (
     <Button
       variant="outlined"
@@ -12,6 +12,7 @@ export const SubmitButton = () => {
         display: "flex",
         justifyContent: "center",
       }}
+      disabled={isLoading}
     >
       submit
     </Button>

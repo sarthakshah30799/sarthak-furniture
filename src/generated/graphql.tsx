@@ -32,7 +32,7 @@ export type Chair = Node & {
   backmaterial?: Maybe<Scalars['String']>;
   color?: Maybe<Scalars['String']>;
   headrest?: Maybe<Scalars['Boolean']>;
-  heightadujstable?: Maybe<Scalars['String']>;
+  heightadjustable?: Maybe<Scalars['String']>;
   id: Scalars['UUID'];
   name?: Maybe<Scalars['String']>;
   /** A globally unique identifier. Can be used in various places throughout the system to identify this single value. */
@@ -61,8 +61,8 @@ export type ChairCondition = {
   color?: InputMaybe<Scalars['String']>;
   /** Checks for equality with the object’s `headrest` field. */
   headrest?: InputMaybe<Scalars['Boolean']>;
-  /** Checks for equality with the object’s `heightadujstable` field. */
-  heightadujstable?: InputMaybe<Scalars['String']>;
+  /** Checks for equality with the object’s `heightadjustable` field. */
+  heightadjustable?: InputMaybe<Scalars['String']>;
   /** Checks for equality with the object’s `id` field. */
   id?: InputMaybe<Scalars['UUID']>;
   /** Checks for equality with the object’s `name` field. */
@@ -93,8 +93,8 @@ export type ChairInput = {
   backmaterial?: InputMaybe<Scalars['String']>;
   color?: InputMaybe<Scalars['String']>;
   headrest?: InputMaybe<Scalars['Boolean']>;
-  heightadujstable?: InputMaybe<Scalars['String']>;
-  id: Scalars['UUID'];
+  heightadjustable?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['UUID']>;
   name?: InputMaybe<Scalars['String']>;
   price?: InputMaybe<Scalars['Float']>;
   pushback?: InputMaybe<Scalars['String']>;
@@ -114,7 +114,7 @@ export type ChairPatch = {
   backmaterial?: InputMaybe<Scalars['String']>;
   color?: InputMaybe<Scalars['String']>;
   headrest?: InputMaybe<Scalars['Boolean']>;
-  heightadujstable?: InputMaybe<Scalars['String']>;
+  heightadjustable?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['UUID']>;
   name?: InputMaybe<Scalars['String']>;
   price?: InputMaybe<Scalars['Float']>;
@@ -163,8 +163,8 @@ export enum ChairsOrderBy {
   ColorDesc = 'COLOR_DESC',
   HeadrestAsc = 'HEADREST_ASC',
   HeadrestDesc = 'HEADREST_DESC',
-  HeightadujstableAsc = 'HEIGHTADUJSTABLE_ASC',
-  HeightadujstableDesc = 'HEIGHTADUJSTABLE_DESC',
+  HeightadjustableAsc = 'HEIGHTADJUSTABLE_ASC',
+  HeightadjustableDesc = 'HEIGHTADJUSTABLE_DESC',
   IdAsc = 'ID_ASC',
   IdDesc = 'ID_DESC',
   NameAsc = 'NAME_ASC',
@@ -691,22 +691,43 @@ export type UpdateMigrationPayloadMigrationEdgeArgs = {
   orderBy?: InputMaybe<Array<MigrationsOrderBy>>;
 };
 
-export type ChairDetailsFragment = { __typename?: 'Chair', id: any, name?: string | null, type?: string | null };
+export type ChairDetailsFragment = { __typename?: 'Chair', id: any, name?: string | null, type?: string | null, arm?: boolean | null, armmaterial?: string | null, backcolor?: string | null, backmaterial?: string | null, seatcolor?: string | null, seatmaterial?: string | null, headrest?: boolean | null, heightadjustable?: string | null, price?: number | null, pushback?: string | null, stand?: string | null, wheel?: string | null };
+
+export type ChairLiteFragment = { __typename?: 'Chair', id: any, name?: string | null, type?: string | null };
 
 export type GetAllChairsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllChairsQuery = { __typename?: 'Query', allChairs?: { __typename?: 'ChairsConnection', nodes: Array<{ __typename?: 'Chair', id: any, name?: string | null, type?: string | null } | null> } | null };
+export type GetAllChairsQuery = { __typename?: 'Query', allChairs?: { __typename?: 'ChairsConnection', nodes: Array<{ __typename?: 'Chair', id: any, name?: string | null, type?: string | null, arm?: boolean | null, armmaterial?: string | null, backcolor?: string | null, backmaterial?: string | null, seatcolor?: string | null, seatmaterial?: string | null, headrest?: boolean | null, heightadjustable?: string | null, price?: number | null, pushback?: string | null, stand?: string | null, wheel?: string | null } | null> } | null };
 
 export type CreateChairMutationVariables = Exact<{
   input: CreateChairInput;
 }>;
 
 
-export type CreateChairMutation = { __typename?: 'Mutation', createChair?: { __typename?: 'CreateChairPayload', chair?: { __typename?: 'Chair', id: any, name?: string | null, type?: string | null } | null } | null };
+export type CreateChairMutation = { __typename?: 'Mutation', createChair?: { __typename?: 'CreateChairPayload', chair?: { __typename?: 'Chair', id: any, name?: string | null, type?: string | null, arm?: boolean | null, armmaterial?: string | null, backcolor?: string | null, backmaterial?: string | null, seatcolor?: string | null, seatmaterial?: string | null, headrest?: boolean | null, heightadjustable?: string | null, price?: number | null, pushback?: string | null, stand?: string | null, wheel?: string | null } | null } | null };
 
 export const ChairDetailsFragmentDoc = gql`
     fragment ChairDetails on Chair {
+  id
+  name
+  type
+  arm
+  armmaterial
+  backcolor
+  backmaterial
+  seatcolor
+  seatmaterial
+  headrest
+  heightadjustable
+  price
+  pushback
+  stand
+  wheel
+}
+    `;
+export const ChairLiteFragmentDoc = gql`
+    fragment ChairLite on Chair {
   id
   name
   type

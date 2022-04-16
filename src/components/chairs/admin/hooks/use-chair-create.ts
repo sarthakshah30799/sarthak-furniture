@@ -1,28 +1,33 @@
-import { CreateChairInput } from "./../../../../generated/graphql";
+import { Chair, CreateChairInput } from "./../../../../generated/graphql";
 import * as Yup from "yup";
 import { useCreateChairMutation } from "../../../../generated/graphql";
 
-export const useChairCreate = () => {
+export const useChairCreate = (chair?: Chair) => {
   const [chairCreateMutation, { loading }] = useCreateChairMutation();
 
   const chairFields = {
-    id: Yup.string().ensure().required(),
     name: Yup.string().ensure().required(),
     type: Yup.string().ensure().required(),
     arm: Yup.boolean().default(false),
-    armMaterial: Yup.string().ensure(),
-    color: Yup.string().ensure().required(),
-    headrest: Yup.boolean().default(false),
+    armmaterial: Yup.string().ensure(),
+    backcolor: Yup.string().ensure().required(),
+    backmaterial: Yup.string().ensure().required(),
+    headrest: Yup.boolean().default(false).required(),
     price: Yup.number().required(),
     pushback: Yup.string().ensure().required(),
     seatcolor: Yup.string().ensure().required(),
     seatmaterial: Yup.string().ensure().required(),
     stand: Yup.string().ensure().required(),
     wheel: Yup.string().ensure().required(),
+    heightadjustable: Yup.string().ensure().required(),
   };
 
   const chairCreationSchema = Yup.object().shape({
     ...chairFields,
+  });
+
+  const initialValues = chairCreationSchema.cast(chair || {}, {
+    assert: true,
   });
 
   const createChair = (input: Yup.InferType<typeof chairCreationSchema>) => {
@@ -38,5 +43,5 @@ export const useChairCreate = () => {
     });
   };
 
-  return { createChair, chairCreationSchema, loading };
+  return { createChair, chairCreationSchema, initialValues, loading };
 };

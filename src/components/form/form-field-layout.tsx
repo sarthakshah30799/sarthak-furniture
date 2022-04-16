@@ -19,7 +19,7 @@ export const FormFieldLayout: React.FC<Props & FormikProps<any>> = ({
       <Box display={"flex"} justifyContent="space-between">
         <Typography style={{ paddingRight: "10px" }}>{label} *</Typography>
         {props.children && typeof props.children === "function" ? (
-          props.children
+          <Field name={name}>{props.children}</Field>
         ) : (
           <Field type={type} name={name} />
         )}

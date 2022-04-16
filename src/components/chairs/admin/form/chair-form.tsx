@@ -6,7 +6,6 @@ import {
   ChairBackMaterialField,
   ChairHeadRestField,
   ChairHeightAdjustableField,
-  ChairIdField,
   ChairNameField,
   ChairPriceField,
   ChairPushbackField,
@@ -16,13 +15,12 @@ import {
   ChairTypeField,
   ChairWheelField,
 } from "./fields";
-import { Form, FormikProps } from "formik";
+import { FormikProps } from "formik";
 import { SubmitButton } from "../../../form";
 
 export const ChairCreateForm: React.FC<FormikProps<any>> = ({ ...props }) => {
   return (
-    <Form>
-      <ChairIdField {...props} />
+    <form onSubmit={props.handleSubmit}>
       <ChairNameField {...props} />
       <ChairTypeField {...props} />
       <ChairPriceField {...props} />
@@ -37,7 +35,7 @@ export const ChairCreateForm: React.FC<FormikProps<any>> = ({ ...props }) => {
       <ChairHeightAdjustableField {...props} />
       <ChairStandField {...props} />
       <ChairWheelField {...props} />
-      <SubmitButton />
-    </Form>
+      <SubmitButton isLoading={props.isSubmitting} />
+    </form>
   );
 };
