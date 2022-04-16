@@ -1,6 +1,9 @@
-import { Chair, CreateChairInput } from "./../../../../generated/graphql";
+import {
+  Chair,
+  CreateChairInput,
+  useCreateChairMutation,
+} from "../../../generated/graphql";
 import * as Yup from "yup";
-import { useCreateChairMutation } from "../../../../generated/graphql";
 
 export const useChairCreate = (chair?: Chair) => {
   const [chairCreateMutation, { loading }] = useCreateChairMutation();

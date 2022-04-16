@@ -1,7 +1,7 @@
 import React from "react";
 import { ChairCreateView } from "./chair-create-view";
 import { FormLayout } from "../../../form";
-import { useChairCreate } from "../hooks/use-chair-create";
+import { useChairCreate } from "../../hooks/use-chair-create";
 import { FormikProps } from "formik";
 
 export const ChairCreateApollo = () => {
