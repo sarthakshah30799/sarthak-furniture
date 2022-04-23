@@ -1,5 +1,5 @@
 overwrite: true
-schema: "http://localhost:5000/graphql"
+schema: "https://sarthak-furniture-api.herokuapp.com/graphql"
 documents: "src/**/*.graphql"
 generates:
   src/generated/graphql.tsx:
