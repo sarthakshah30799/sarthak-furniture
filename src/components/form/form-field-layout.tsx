@@ -21,7 +21,7 @@ export const FormFieldLayout: React.FC<Props & FormikProps<any>> = ({
         {props.children && typeof props.children === "function" ? (
           <Field name={name}>{props.children}</Field>
         ) : (
-          <Field type={type} name={name} />
+          <Field min={"0"} type={type} name={name} />
         )}
       </Box>
 

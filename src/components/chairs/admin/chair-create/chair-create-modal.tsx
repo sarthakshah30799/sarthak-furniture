@@ -5,7 +5,7 @@ import { ModalWrapper } from "../../../modal";
 export const ChairCreateModal = ({ isOpen, setIsOpen }) => {
   return (
     <ModalWrapper isOpen={isOpen} setIsOpen={setIsOpen}>
-      <ChairCreateApollo />
+      <ChairCreateApollo setIsOpen={setIsOpen} />
     </ModalWrapper>
   );
 };
