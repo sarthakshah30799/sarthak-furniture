@@ -5,18 +5,24 @@ import {
 } from "../../../generated/graphql";
 import * as Yup from "yup";
 
-export const useChairCreate = (chair?: Chair) => {
-  const [chairCreateMutation, { loading }] = useCreateChairMutation();
+export const useChairCreate = (chair?: Chair | null, callback?: Function) => {
+  const [chairCreateMutation, { loading }] = useCreateChairMutation({
+    onCompleted() {
+      if (callback) {
+        callback();
+      }
+    },
+  });
 
   const chairFields = {
     name: Yup.string().ensure().required(),
     type: Yup.string().ensure().required(),
-    arm: Yup.boolean().default(false),
-    armmaterial: Yup.string().ensure(),
+    arm: Yup.boolean().default(true).required(),
+    armmaterial: Yup.string().ensure().required(),
     backcolor: Yup.string().ensure().required(),
     backmaterial: Yup.string().ensure().required(),
     headrest: Yup.boolean().default(false).required(),
-    price: Yup.number().required(),
+    price: Yup.number().min(100).required(),
     pushback: Yup.string().ensure().required(),
     seatcolor: Yup.string().ensure().required(),
     seatmaterial: Yup.string().ensure().required(),
