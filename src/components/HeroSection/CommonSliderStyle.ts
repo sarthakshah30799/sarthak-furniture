@@ -48,6 +48,7 @@ export const useStyles = makeStyles((theme) =>
       width: "100%",
       objectFit: "contain",
       cursor: "pointer",
+      borderRadius: "8px",
       "&:hover": {
         transform: "scale(1.1)",
       },

@@ -7,8 +7,7 @@ export const useStyles = makeStyles((theme) =>
     },
     sliderContainer: {
       margin: "auto",
-      padding: "50px 10px",
-      background: "honeydew",
+      padding: "30px 10px",
       "@media (max-width:1100px)": {
         padding: "30px 10px",
       },

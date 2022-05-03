@@ -34,7 +34,7 @@ const HeroSection = () => {
   const classes = useStyles();
 
   return (
-    <Box style={{ paddingBottom: "50px" }}>
+    <Box style={{ paddingBottom: "70px" }}>
       <Slider {...settings}>
         {heroSectionData.map((data) => (
           <div>

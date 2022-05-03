@@ -2,69 +2,61 @@ import { createStyles, makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles((theme) =>
   createStyles({
-    productDetails: {
-      paddingTop: "50px",
-      maxWidth: "900px",
-      margin: "auto",
-      "@media (max-width:600px)": {
-        maxWidth: "400px",
-      },
-      "@media (max-width:400px)": {
-        maxWidth: "350px",
-      },
+    root: {
+      padding: "30px 0",
     },
-    cardContent: {
-      margin: "auto",
-      padding: "50px 40px",
-      borderRadius: "20px",
-      background: "lightgrey",
-      maxWidth: "600px",
-      "@media (max-width:600px)": {
-        maxWidth: "400px",
-        padding: "50px 40px",
-      },
-      "@media (max-width:500px)": {
-        maxWidth: "350px",
-        padding: "30px 20px",
-      },
+    mainImage: {
+      height: "400px",
+      borderRadius: "8px",
     },
-    imgStyle: {
-      boxShadow: `0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)`,
-      margin: "auto",
-      height: "500px",
-      borderRadius: "15px",
-      maxWidth: "500px",
-      width: "100%",
-      transition: "transform .2s",
-      "&:hover": {
-        transform: "scale(1.2)",
-      },
+    subImages: {
+      maxHeight: "80px",
+      borderRadius: "8px",
+      objectFit: "cover",
       cursor: "pointer",
-      "@media (max-width:1100px)": {
-        height: "500px",
-      },
-      "@media (max-width:600px)": {
-        maxWidth: "450px",
-        maxHeight: "350px",
-        borderRadius: "20px",
-      },
     },
-    chairInfoTable: {
-      maxWidth: "600px",
-      margin: "auto",
-      marginTop: "30px",
-      padding: "20px 10px",
-      border: "1px solid grey",
-      "@media (max-width:600px)": {
-        maxWidth: "350px",
-        padding: "20px 0px",
-      },
+    nonSelectedImage: {
+      opacity: 0.5,
     },
-    chairInfoRow: {
-      bottomBorder: "1px solid black",
+    detailsContent: {
+      textAlign: "left",
     },
-    chairInfoKey: {
-      fontWeight: 600,
+    detailTextStyle: {
+      textTransform: "capitalize",
+      fontWeight: "bold",
+      fontSize: "22px",
+      padding: "5px 0",
+      display: "flex",
+      alignItems: "center",
+    },
+    buttonGroup: {
+      padding: "20px 0",
+    },
+    addToCartButton: {
+      minWidth: "180px",
+      backgroundColor: "#D867C0",
+      textTransform: "capitalize",
+      fontWeight: "bold",
+      padding: "10px 0",
+    },
+    buyNowButton: {
+      minWidth: "180px",
+      backgroundColor: "#4073FF",
+      marginLeft: "20px",
+      textTransform: "capitalize",
+      fontWeight: "bold",
+      padding: "10px 0",
+    },
+    deliveryText: {
+      fontWeight: 400,
+      fontSize: "14px",
+      textDecoration: "underline",
+    },
+    descriptionText: {
+      fontWeight: "bold",
+      textDecoration: "underline",
+      fontSize: "30px",
+      textAlign: "start",
     },
   })
 );

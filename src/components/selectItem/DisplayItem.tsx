@@ -1,188 +1,130 @@
-import { Grid, Box, Typography } from "@material-ui/core";
-import React from "react";
+import { Grid, Box, Typography, Avatar, Button } from "@material-ui/core";
+import { get } from "lodash";
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import { getMockDataForProducts } from "../../utils/getMockDataForProducts";
+
 import { useStyles } from "./DisplayItemStyle";
-// import { useQuery } from "react-query";
-// import chairFactory from "../../API_CALL/Factory/chairFactory";
 
-export default function DisplayItem({ data, id }) {
+const basicDetials = ["name", "type", "price"];
+
+export default function DisplayItem() {
   const classes = useStyles();
-  // console.log("components", id);
-  // const { data, isLoading } = useQuery(id, () => chairFactory.get(id));
-  // if (isLoading) {
-  //   return <>loading...</>;
-  // }
+  const { category, id }: { category: string; id: string } = useParams();
 
-  const itemData = data.filter((data: any) => data.id === id);
+  const mockData = getMockDataForProducts(category);
+
+  const categroyItem = get(mockData, "data", []) as any;
+  const itemData = categroyItem.find((data: any) => data.id === id);
+
+  const [previewImageUrl, setPreviewImageUrl] = useState(itemData.images[0]);
+
   return (
     <>
-      {itemData.map((data, index) => (
-        <Box key={`single-item-${index}`}>
-          <Grid className={classes.productDetails}>
-            <div>
-              <Grid className={classes.cardContent}>
+      <Grid container className={classes.root} spacing={3}>
+        <Grid item xs={12} md={6}>
+          <img
+            className={classes.mainImage}
+            src={previewImageUrl}
+            alt={itemData.name}
+          />
+          <Box
+            display={"flex"}
+            alignItems="center"
+            maxWidth="450px"
+            justifyContent={"space-around"}
+            margin={"0 auto"}
+          >
+            {(itemData.images || []).map((image: string, index: number) => (
+              <Box
+                style={{ padding: "20px 10px" }}
+                onClick={() => {
+                  setPreviewImageUrl(image);
+                }}
+              >
                 <img
-                  src={data.image}
-                  alt={data.name}
-                  className={classes.imgStyle}
+                  className={`${classes.subImages} ${
+                    image === previewImageUrl ? classes.nonSelectedImage : ""
+                  }`}
+                  key={`item-images-${index}`}
+                  src={image}
+                  alt={itemData.name}
                 />
-              </Grid>
-            </div>
-          </Grid>
-          <Box paddingTop="20px">
-            <Typography variant="h4" style={{ paddingBottom: "10px" }}>
-              Enquiry or Order on
-            </Typography>
-            <Typography variant="h3">
-              Vipulbhai : 9825381956, 7016911293
+              </Box>
+            ))}
+          </Box>
+        </Grid>
+        <Grid item xs={12} md={6} className={classes.detailsContent}>
+          <Box>
+            {basicDetials.map((key, index) => (
+              <Typography
+                className={classes.detailTextStyle}
+                key={`basic-info-${index}`}
+              >
+                {key} :
+                <span
+                  style={{
+                    display: "flex",
+                    fontWeight: "normal",
+                    paddingLeft: "10px",
+                  }}
+                >
+                  {key === "price" ? (
+                    <>
+                      <Avatar
+                        style={{ maxWidth: 32 }}
+                        src={"/icons/currency.svg"}
+                      />
+                      {(Math.round(itemData[key] * 100) / 100).toLocaleString()}
+                    </>
+                  ) : (
+                    itemData[key]
+                  )}
+                </span>
+              </Typography>
+            ))}
+            <Box className={classes.buttonGroup}>
+              <Button className={classes.addToCartButton}>
+                Add to cart
+                <Avatar
+                  style={{
+                    maxHeight: "30px",
+                    height: "auto",
+                    paddingLeft: "5px",
+                  }}
+                  src={"/icons/cart.svg"}
+                />
+              </Button>
+              <Button className={classes.buyNowButton}>
+                Buy now
+                <Avatar
+                  style={{
+                    maxHeight: "30px",
+                    height: "auto",
+                    paddingLeft: "5px",
+                  }}
+                  src={"/icons/right-arrow.svg"}
+                />
+              </Button>
+            </Box>
+            <Typography className={classes.deliveryText}>
+              *Delivery charges will be applied while checkout
             </Typography>
           </Box>
-          <Grid container className={classes.chairInfoTable} spacing={2}>
-            <Grid
-              item
-              xs={6}
-              className={classes.chairInfoKey}
-              style={{ fontWeight: "600" }}
-            >
-              <div>Name: </div>
-            </Grid>
-            <Grid item xs={6}>
-              <div>{data.name || ""}</div>
-            </Grid>
-            <Grid
-              item
-              xs={6}
-              className={classes.chairInfoKey}
-              style={{ fontWeight: "600" }}
-            >
-              <div>Type: </div>
-            </Grid>
-            <Grid item xs={6}>
-              <div>{data.type || ""}</div>
-            </Grid>
-            <Grid
-              item
-              xs={6}
-              className={classes.chairInfoKey}
-              style={{ fontWeight: "600" }}
-            >
-              <div>Arm: </div>
-            </Grid>
-            <Grid item xs={6}>
-              <div>{data.arm || ""}</div>
-            </Grid>
-            <Grid
-              item
-              xs={6}
-              className={classes.chairInfoKey}
-              style={{ fontWeight: "600" }}
-            >
-              <div>Arm material: </div>
-            </Grid>
-            <Grid item xs={6}>
-              <div>{data.arm_material || ""}</div>
-            </Grid>
-            <Grid
-              item
-              xs={6}
-              className={classes.chairInfoKey}
-              style={{ fontWeight: "600" }}
-            >
-              <div>Back color : </div>
-            </Grid>
-            <Grid item xs={6}>
-              <div>{data.back_color || ""}</div>
-            </Grid>
-            <Grid
-              item
-              xs={6}
-              className={classes.chairInfoKey}
-              style={{ fontWeight: "600" }}
-            >
-              <div>Back material: </div>
-            </Grid>
-            <Grid item xs={6}>
-              <div>{data.back_material || ""}</div>
-            </Grid>
-            <Grid
-              item
-              xs={6}
-              className={classes.chairInfoKey}
-              style={{ fontWeight: "600" }}
-            >
-              <div>Headrest: </div>
-            </Grid>
-            <Grid item xs={6}>
-              <div>{data.headrest || ""}</div>
-            </Grid>
-            <Grid
-              item
-              xs={6}
-              className={classes.chairInfoKey}
-              style={{ fontWeight: "600" }}
-            >
-              <div>Height adjustable: </div>
-            </Grid>
-            <Grid item xs={6}>
-              <div>{data.height_adjustable || ""}</div>
-            </Grid>
-            <Grid
-              item
-              xs={6}
-              className={classes.chairInfoKey}
-              style={{ fontWeight: "600" }}
-            >
-              <div>Pushback: </div>
-            </Grid>
-            <Grid item xs={6}>
-              <div>{data.pushback || ""}</div>
-            </Grid>
-            <Grid
-              item
-              xs={6}
-              className={classes.chairInfoKey}
-              style={{ fontWeight: "600" }}
-            >
-              <div>Seat color: </div>
-            </Grid>
-            <Grid item xs={6}>
-              <div>{data.seat_color || ""}</div>
-            </Grid>
-            <Grid
-              item
-              xs={6}
-              className={classes.chairInfoKey}
-              style={{ fontWeight: "600" }}
-            >
-              <div>Seat material: </div>
-            </Grid>
-            <Grid item xs={6}>
-              <div>{data.seat_material || ""}</div>
-            </Grid>
-            <Grid
-              item
-              xs={6}
-              className={classes.chairInfoKey}
-              style={{ fontWeight: "600" }}
-            >
-              <div>Stand: </div>
-            </Grid>
-            <Grid item xs={6}>
-              <div>{data.stand || ""}</div>
-            </Grid>
-            <Grid
-              item
-              xs={6}
-              className={classes.chairInfoKey}
-              style={{ fontWeight: "600" }}
-            >
-              <div>Wheel: </div>
-            </Grid>
-            <Grid item xs={6}>
-              <div>{data.wheel || ""}</div>
-            </Grid>
-          </Grid>
-        </Box>
-      ))}
+        </Grid>
+      </Grid>
+
+      <Box padding="1px" style={{ border: "1px solid #c7b7b7" }} />
+
+      {/**
+       * description section
+       */}
+      <Box padding={"30px 0"}>
+        <Typography className={classes.descriptionText}>
+          Description:
+        </Typography>
+        {mockData.description(itemData)}
+      </Box>
     </>
   );
 }

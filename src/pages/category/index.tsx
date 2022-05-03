@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { CategoryProducts } from "../../components/CategoryProductsLayout/CategoryProducts";
+import { CategoryProductsLayout } from "../../components/layout/CategoryProductsLayout";
 import HomePage from "../../components/HomePage";
 import {
   chairPartsData,
@@ -17,39 +17,39 @@ export default function Category() {
   return (
     <>
       {category === "chairs" && (
-        <CategoryProducts>
+        <CategoryProductsLayout>
           <HomePage type={category} category={chairsData} />
-        </CategoryProducts>
+        </CategoryProductsLayout>
       )}
       {category === "tables" && (
-        <CategoryProducts>
+        <CategoryProductsLayout>
           <HomePage type={category} category={tablesData} />
-        </CategoryProducts>
+        </CategoryProductsLayout>
       )}
       {category === "curtains" && (
-        <CategoryProducts>
+        <CategoryProductsLayout>
           <HomePage type={category} category={curtainsData} />
-        </CategoryProducts>
+        </CategoryProductsLayout>
       )}
       {category === "carpets" && (
-        <CategoryProducts>
+        <CategoryProductsLayout>
           <HomePage type={category} category={carpetsData} />
-        </CategoryProducts>
+        </CategoryProductsLayout>
       )}
       {category === "sofa-sets" && (
-        <CategoryProducts>
+        <CategoryProductsLayout>
           <HomePage type={category} category={sofaSetsData} />
-        </CategoryProducts>
+        </CategoryProductsLayout>
       )}
       {category === "chair-parts" && (
-        <CategoryProducts>
+        <CategoryProductsLayout>
           <HomePage type={category} category={chairPartsData} />
-        </CategoryProducts>
+        </CategoryProductsLayout>
       )}
       {category === "double-beds" && (
-        <CategoryProducts>
+        <CategoryProductsLayout>
           <HomePage type={category} category={doubleBedData} />
-        </CategoryProducts>
+        </CategoryProductsLayout>
       )}
     </>
   );

@@ -1,3 +1,4 @@
+import { Box } from "@material-ui/core";
 import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -6,7 +7,9 @@ export default function Layout({ children }) {
   return (
     <>
       <Header />
-      {children}
+      <Box maxWidth={"1100px"} margin="auto">
+        {children}
+      </Box>
       <Footer />
     </>
   );
