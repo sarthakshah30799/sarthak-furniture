@@ -7,7 +7,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Header />
-      <Box maxWidth={"1100px"} margin="auto">
+      <Box maxWidth={"1440px"} margin="auto">
         {children}
       </Box>
       <Footer />

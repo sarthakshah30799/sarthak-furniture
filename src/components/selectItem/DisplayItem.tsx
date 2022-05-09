@@ -1,12 +1,12 @@
 import { Grid, Box, Typography, Avatar, Button } from "@material-ui/core";
-import { get } from "lodash";
+import { get, omit } from "lodash";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { getMockDataForProducts } from "../../utils/getMockDataForProducts";
 
 import { useStyles } from "./DisplayItemStyle";
 
-const basicDetials = ["name", "type", "price"];
+const basicDetials = ["name", "type", "price", "id"];
 
 export default function DisplayItem() {
   const classes = useStyles();
@@ -18,6 +18,11 @@ export default function DisplayItem() {
   const itemData = categroyItem.find((data: any) => data.id === id);
 
   const [previewImageUrl, setPreviewImageUrl] = useState(itemData.images[0]);
+
+  const totalValue = (
+    parseInt(itemData["price"]) +
+    (parseInt(itemData["price"]) * 18) / 100
+  ).toFixed(2);
 
   return (
     <>
@@ -56,33 +61,35 @@ export default function DisplayItem() {
         </Grid>
         <Grid item xs={12} md={6} className={classes.detailsContent}>
           <Box>
-            {basicDetials.map((key, index) => (
-              <Typography
-                className={classes.detailTextStyle}
-                key={`basic-info-${index}`}
-              >
-                {key} :
-                <span
-                  style={{
-                    display: "flex",
-                    fontWeight: "normal",
-                    paddingLeft: "10px",
-                  }}
+            {basicDetials
+              .filter((b) => b !== "id")
+              .map((key, index) => (
+                <Typography
+                  className={classes.detailTextStyle}
+                  key={`basic-info-${index}`}
                 >
-                  {key === "price" ? (
-                    <>
-                      <Avatar
-                        style={{ maxWidth: 32 }}
-                        src={"/icons/currency.svg"}
-                      />
-                      {(Math.round(itemData[key] * 100) / 100).toLocaleString()}
-                    </>
-                  ) : (
-                    itemData[key]
-                  )}
-                </span>
-              </Typography>
-            ))}
+                  {key} :
+                  <span
+                    style={{
+                      display: "flex",
+                      fontWeight: "normal",
+                      paddingLeft: "10px",
+                    }}
+                  >
+                    {key === "price" ? (
+                      <>
+                        <Avatar
+                          style={{ maxWidth: 32 }}
+                          src={"/icons/currency.svg"}
+                        />
+                        {`${totalValue} incl. GST(18%)`}
+                      </>
+                    ) : (
+                      itemData[key]
+                    )}
+                  </span>
+                </Typography>
+              ))}
             <Box className={classes.buttonGroup}>
               <Button className={classes.addToCartButton}>
                 Add to cart
@@ -123,7 +130,9 @@ export default function DisplayItem() {
         <Typography className={classes.descriptionText}>
           Description:
         </Typography>
-        {mockData.description(itemData)}
+        <Box paddingTop={"20px"} marginLeft="50px">
+          {mockData.description(omit(itemData, basicDetials))}
+        </Box>
       </Box>
     </>
   );

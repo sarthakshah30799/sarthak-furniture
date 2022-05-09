@@ -10,7 +10,6 @@ export const useStyles = makeStyles((theme) =>
       boxShadow: "0px 10px 10px rgb(0,0,0,0.7)",
       backgroundRepeat: "no-repeat",
       backgroundSize: "100% 100%",
-      margin: "10px auto",
       padding: "15px 30px",
       "@media (max-width:1100px)": {
         padding: "10px 15px",

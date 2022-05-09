@@ -1,0 +1,14 @@
+.product-details {
+  .product-detail-key {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: start;
+    &::after {
+      content: ": ";
+    }
+  }
+  .product-detail-value {
+    font-size: 18px;
+    text-align: start;
+  }
+}

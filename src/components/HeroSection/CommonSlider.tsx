@@ -54,7 +54,11 @@ export default function CommonSlider({ sliderContent, slideToShow, action }) {
   const settings = sliderSetting(setActiveSlide);
 
   return (
-    <Box position={"relative"}>
+    <Box
+      boxShadow={"0 2px 4px 0 rgb(0 0 0 / 8%)"}
+      padding="20px 0"
+      position={"relative"}
+    >
       <Box
         className={classes.sliderNavigationButton}
         top={0}

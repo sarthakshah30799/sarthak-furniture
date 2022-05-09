@@ -10,6 +10,7 @@ import { theme } from "./theme";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { API_URL } from "./API_CALL/API_URL";
 import Chair from "./pages/admin/chair";
+import "./styles/app.scss";
 
 function App() {
   const client = new ApolloClient({
