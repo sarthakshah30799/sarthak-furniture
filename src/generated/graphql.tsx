@@ -344,6 +344,19 @@ export type DeleteMigrationPayloadMigrationEdgeArgs = {
   orderBy?: InputMaybe<Array<MigrationsOrderBy>>;
 };
 
+export type InstagramMedia = {
+  __typename?: 'InstagramMedia';
+  data?: Maybe<Array<Maybe<Media>>>;
+  pagination?: Maybe<Pagination>;
+};
+
+export type Media = {
+  __typename?: 'Media';
+  id?: Maybe<Scalars['String']>;
+  media_type?: Maybe<Scalars['String']>;
+  media_url?: Maybe<Scalars['String']>;
+};
+
 export type Migration = Node & {
   __typename?: 'Migration';
   id: Scalars['Int'];
@@ -519,6 +532,12 @@ export type PageInfo = {
   startCursor?: Maybe<Scalars['Cursor']>;
 };
 
+export type Pagination = {
+  __typename?: 'Pagination';
+  after?: Maybe<Scalars['String']>;
+  before?: Maybe<Scalars['String']>;
+};
+
 /** The root query type which gives access points into the data universe. */
 export type Query = Node & {
   __typename?: 'Query';
@@ -529,6 +548,7 @@ export type Query = Node & {
   /** Reads a single `Chair` using its globally unique `ID`. */
   chair?: Maybe<Chair>;
   chairById?: Maybe<Chair>;
+  instagramMedia?: Maybe<InstagramMedia>;
   /** Reads a single `Migration` using its globally unique `ID`. */
   migration?: Maybe<Migration>;
   migrationById?: Maybe<Migration>;
@@ -577,6 +597,12 @@ export type QueryChairArgs = {
 /** The root query type which gives access points into the data universe. */
 export type QueryChairByIdArgs = {
   id: Scalars['UUID'];
+};
+
+
+/** The root query type which gives access points into the data universe. */
+export type QueryInstagramMediaArgs = {
+  code: Scalars['String'];
 };
 
 
@@ -707,6 +733,15 @@ export type CreateChairMutationVariables = Exact<{
 
 export type CreateChairMutation = { __typename?: 'Mutation', createChair?: { __typename?: 'CreateChairPayload', chair?: { __typename?: 'Chair', id: any, name?: string | null, type?: string | null, arm?: boolean | null, armmaterial?: string | null, backcolor?: string | null, backmaterial?: string | null, seatcolor?: string | null, seatmaterial?: string | null, headrest?: boolean | null, heightadjustable?: string | null, price?: number | null, pushback?: string | null, stand?: string | null, wheel?: string | null } | null } | null };
 
+export type InstagramMediaFragment = { __typename?: 'InstagramMedia', data?: Array<{ __typename?: 'Media', id?: string | null, media_url?: string | null, media_type?: string | null } | null> | null, pagination?: { __typename?: 'Pagination', after?: string | null, before?: string | null } | null };
+
+export type InstagramMediaQueryVariables = Exact<{
+  code: Scalars['String'];
+}>;
+
+
+export type InstagramMediaQuery = { __typename?: 'Query', instagramMedia?: { __typename?: 'InstagramMedia', data?: Array<{ __typename?: 'Media', id?: string | null, media_url?: string | null, media_type?: string | null } | null> | null, pagination?: { __typename?: 'Pagination', after?: string | null, before?: string | null } | null } | null };
+
 export const ChairDetailsFragmentDoc = gql`
     fragment ChairDetails on Chair {
   id
@@ -731,6 +766,19 @@ export const ChairLiteFragmentDoc = gql`
   id
   name
   type
+}
+    `;
+export const InstagramMediaFragmentDoc = gql`
+    fragment InstagramMedia on InstagramMedia {
+  data {
+    id
+    media_url
+    media_type
+  }
+  pagination {
+    after
+    before
+  }
 }
     `;
 export const GetAllChairsDocument = gql`
@@ -804,3 +852,38 @@ export function useCreateChairMutation(baseOptions?: Apollo.MutationHookOptions<
 export type CreateChairMutationHookResult = ReturnType<typeof useCreateChairMutation>;
 export type CreateChairMutationResult = Apollo.MutationResult<CreateChairMutation>;
 export type CreateChairMutationOptions = Apollo.BaseMutationOptions<CreateChairMutation, CreateChairMutationVariables>;
+export const InstagramMediaDocument = gql`
+    query instagramMedia($code: String!) {
+  instagramMedia(code: $code) {
+    ...InstagramMedia
+  }
+}
+    ${InstagramMediaFragmentDoc}`;
+
+/**
+ * __useInstagramMediaQuery__
+ *
+ * To run a query within a React component, call `useInstagramMediaQuery` and pass it any options that fit your needs.
+ * When your component renders, `useInstagramMediaQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useInstagramMediaQuery({
+ *   variables: {
+ *      code: // value for 'code'
+ *   },
+ * });
+ */
+export function useInstagramMediaQuery(baseOptions: Apollo.QueryHookOptions<InstagramMediaQuery, InstagramMediaQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<InstagramMediaQuery, InstagramMediaQueryVariables>(InstagramMediaDocument, options);
+      }
+export function useInstagramMediaLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<InstagramMediaQuery, InstagramMediaQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<InstagramMediaQuery, InstagramMediaQueryVariables>(InstagramMediaDocument, options);
+        }
+export type InstagramMediaQueryHookResult = ReturnType<typeof useInstagramMediaQuery>;
+export type InstagramMediaLazyQueryHookResult = ReturnType<typeof useInstagramMediaLazyQuery>;
+export type InstagramMediaQueryResult = Apollo.QueryResult<InstagramMediaQuery, InstagramMediaQueryVariables>;

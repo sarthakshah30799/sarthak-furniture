@@ -4,16 +4,19 @@ import { FormLayout } from "../../../form";
 import { useChairCreate } from "../../hooks/use-chair-create";
 import { FormikProps } from "formik";
 import { useChariDetails } from "../../hooks";
+import { Typography } from "@material-ui/core";
 
-export const ChairCreateApollo = ({ setIsOpen }) => {
-  const { refetch } = useChariDetails();
-  const { chairCreationSchema, initialValues, createChair } = useChairCreate(
-    null,
-    () => {
-      refetch();
-      setIsOpen(false);
-    }
-  );
+export const ChairCreateApollo = ({ setIsOpen, mediaLoading }) => {
+  const { refetch, loading: dLoading } = useChariDetails();
+  const {
+    chairCreationSchema,
+    initialValues,
+    createChair,
+    loading,
+  } = useChairCreate(null, () => {
+    refetch();
+    setIsOpen(false);
+  });
 
   return (
     <FormLayout
@@ -23,7 +26,16 @@ export const ChairCreateApollo = ({ setIsOpen }) => {
       }}
       initialValues={initialValues}
     >
-      {({ ...props }: FormikProps<any>) => <ChairCreateView {...props} />}
+      {({ ...props }: FormikProps<any>) => (
+        <>
+          <Typography style={{ textAlign: "center" }}>Create Chair</Typography>
+          <ChairCreateView
+            {...props}
+            mediaLoading={mediaLoading}
+            loading={loading || dLoading}
+          />
+        </>
+      )}
     </FormLayout>
   );
 };

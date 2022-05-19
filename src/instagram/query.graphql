@@ -1,0 +1,17 @@
+fragment InstagramMedia on InstagramMedia {
+  data {
+    id
+    media_url
+    media_type
+  }
+  pagination {
+    after
+    before
+  }
+}
+
+query instagramMedia($code: String!) {
+  instagramMedia(code: $code) {
+    ...InstagramMedia
+  }
+}
